@@ -1,0 +1,17 @@
+version: '3'
+services:
+  nextcloud:
+    image: nextcloud
+    container_name: nextcloud
+    environment:
+      - PGID=1000
+      - PUID=1000
+    ports:
+      - "9000:80"
+    volumes:
+      - /yourpath//nextcloud/html:/var/www/html
+      - /yourpath//nextcloud/apps:/var/www/html/custom_apps
+      - /yourpath//nextcloud/config:/var/www/html/config
+      - /yourpath//nextcloud/data:/var/www/html/data
+      - /yourpath//nextcloud/theme:/var/www/html/themes
+    restart: unless-stopped

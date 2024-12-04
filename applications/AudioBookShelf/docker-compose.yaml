@@ -1,0 +1,13 @@
+version: '3'
+services:
+  audiobookshelf:
+    image: ghcr.io/advplyr/audiobookshelf
+    container_name: audiobookshelf
+    ports:
+      - 13378:80
+    restart: unless-stopped
+    volumes:
+      - /yourpath/audibookshelf/config:/config
+      - /yourpath/audibookshelf/metadata:/metadata
+      - /yourpath/audibookshelf/audiobooks:/audiobooks
+      - /yourpath/audibookshelf/podcasts:/podcasts
