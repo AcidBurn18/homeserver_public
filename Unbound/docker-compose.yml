@@ -1,0 +1,16 @@
+services:
+  unbound:
+    container_name: unbound
+    image: "pedantic/unbound:1.22.0"
+    networks:
+      - twinagate_pihole-twingate    # this is my network underwhich pihole and twingate running
+    ports:
+      - "5335:53/tcp"    #since 53 port is already utilized by pihole so we used 5335
+      - "5335:53/udp"    #since 53 port is already utilized by pihole so we used 5335
+    volumes:
+      - "./docker/data/unbound/my_conf:/opt/unbound/etc/unbound"   # using bind mount, i wanted this to be easy :)
+    restart: unless-stopped
+
+networks:                        
+  twinagate_pihole-twingate:
+    external: true
