@@ -20,7 +20,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 1m0s
-  path: ./clusters/my-cluster
+  path: ./platform/flux/my-cluster/flux-system
   prune: true
   sourceRef:
     kind: GitRepository
@@ -33,7 +33,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 1m0s
-  path: ./applications
+  path: ./services
   prune: true
   sourceRef:
     kind: GitRepository
