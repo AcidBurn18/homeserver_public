@@ -12,6 +12,7 @@ services:
       - "6881:6881"
       - "6881:6881/udp"
     volumes:
-      - /yourpath/qbittorrent/appdata/config:/config
-      - /yourpath/qbittorrent/downloads:/downloads
+      - ./appdata:/config
+      - /yourpath/Jellyfin/media:/media_final
+      - /yourpath/qbittorrent/downloads:/downloads #optional
     restart: unless-stopped
