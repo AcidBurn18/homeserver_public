@@ -1,0 +1,22 @@
+# Main Server Docker Compose File for Tailscale
+
+services:
+  tailscale:
+    image: tailscale/tailscale:latest
+    hostname: tailscale
+    environment:
+      - TS_AUTHKEY=tskey-*****************   # 👈 Replace with your Tailscale auth key
+      - TS_STATE_DIR=/var/lib/tailscale
+      - TS_ROUTES=10.27.27.0/24
+      # 👇 Optional: Prevents the container from using MagicDNS itself (safer)
+      - TS_EXTRA_ARGS=--accept-dns=false
+      - TS_USERSPACE=false
+    volumes:
+      - ${PWD}/tailscale-nginx/state:/var/lib/tailscale
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    cap_add:
+      - net_admin
+    restart: unless-stopped
+
+

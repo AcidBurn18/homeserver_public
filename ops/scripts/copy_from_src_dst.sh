@@ -1,3 +1,5 @@
+### NO LONGER IN USE ###
+
 #It will Regular Monitor the SRC path as soon as the new files comes will copy to the destination path and will clear the source file 
 # I Used it for Copy file from nextcloud upload to jellyfin music path copy
 
