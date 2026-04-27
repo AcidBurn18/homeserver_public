@@ -1,0 +1,9 @@
+# Optional LAN-only HTTPS reverse proxy for the dashboard.
+# Run Caddy on the same home server and proxy to :3000 (web) and :8080 (api).
+#
+# Example:
+#   dashboard.lan {
+#     reverse_proxy /api/* api:8080
+#     reverse_proxy web:3000
+#   }
+
