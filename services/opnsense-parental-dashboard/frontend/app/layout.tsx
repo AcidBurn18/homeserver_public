@@ -1,7 +1,7 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "OPNsense Parental Dashboard",
+  title: "Homeserver Dashboard",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -11,4 +11,3 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </html>
   );
 }
-

@@ -31,18 +31,7 @@ def _toggle_rule(rule_uuid: str | None, enabled: bool) -> dict:
     return res
 
 
-@router.post("/internet_killswitch", dependencies=[Depends(require_admin)])
-def internet_killswitch(req: ToggleRequest, db: Session = Depends(get_db)) -> dict[str, object]:
-    res = _toggle_rule(settings.internet_kill_rule_uuid, req.enabled)
-    audit(db, actor="admin", action="control.internet_killswitch", details={"enabled": req.enabled, "result": res})
-    return {"ok": True, "result": res}
-
-
-@router.post("/guest_mute", dependencies=[Depends(require_admin)])
-def guest_mute(req: ToggleRequest, db: Session = Depends(get_db)) -> dict[str, object]:
-    res = _toggle_rule(settings.guest_mute_rule_uuid, req.enabled)
-    audit(db, actor="admin", action="control.guest_mute", details={"enabled": req.enabled, "result": res})
-    return {"ok": True, "result": res}
+    # Removed internet_killswitch and guest_mute endpoints
 
 
 @router.post("/bedtime_lock", dependencies=[Depends(require_admin)])

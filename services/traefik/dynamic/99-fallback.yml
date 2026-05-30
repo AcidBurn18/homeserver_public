@@ -1,0 +1,15 @@
+http:
+  routers:
+    fallback:
+      rule: 'HostRegexp(`^.+\\.home\\.int$`)'
+      entryPoints:
+        - websecure
+      tls: {}
+      priority: 1
+      service: fallback-site-svc
+
+  services:
+    fallback-site-svc:
+      loadBalancer:
+        servers:
+          - url: "http://fallback-site:80"

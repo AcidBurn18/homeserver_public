@@ -1,0 +1,608 @@
+This file is a merged representation of the entire codebase, combined into a single document by Repomix.
+The content has been processed where content has been compressed (code blocks are separated by ⋮---- delimiter).
+
+<file_summary>
+This section contains a summary of this file.
+
+<purpose>
+This file contains a packed representation of the entire repository's contents.
+It is designed to be easily consumable by AI systems for analysis, code review,
+or other automated processes.
+</purpose>
+
+<file_format>
+The content is organized as follows:
+1. This summary section
+2. Repository information
+3. Directory structure
+4. Repository files (if enabled)
+5. Multiple file entries, each consisting of:
+  - File path as an attribute
+  - Full contents of the file
+</file_format>
+
+<usage_guidelines>
+- This file should be treated as read-only. Any changes should be made to the
+  original repository files, not this packed version.
+- When processing this file, use the file path to distinguish
+  between different files in the repository.
+- Be aware that this file may contain sensitive information. Handle it with
+  the same level of security as you would the original repository.
+</usage_guidelines>
+
+<notes>
+- Some files may have been excluded based on .gitignore rules and Repomix's configuration
+- Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files
+- Files matching patterns in .gitignore are excluded
+- Files matching default ignore patterns are excluded
+- Content has been compressed - code blocks are separated by ⋮---- delimiter
+- Files are sorted by Git change count (files with more changes are at the bottom)
+</notes>
+
+</file_summary>
+
+<directory_structure>
+app/
+  globals.css
+  layout.tsx
+  page.tsx
+src/
+  components/
+    ui/
+      SectionHeader.tsx
+      StatusCard.tsx
+  features/
+    dashboard/
+      HomeServerDashboard.tsx
+  modules/
+    media/
+      README.md
+    observability/
+      README.md
+    opnsense/
+      OpnsenseModule.tsx
+      types.ts
+      utils.ts
+    storage/
+      README.md
+    tailscale/
+      README.md
+    README.md
+  types/
+    README.md
+Dockerfile
+next-env.d.ts
+next.config.js
+package.json
+tsconfig.json
+</directory_structure>
+
+<files>
+This section contains the contents of the repository's files.
+
+<file path="app/globals.css">
+:root {
+⋮----
+* {
+⋮----
+html,
+⋮----
+button,
+⋮----
+button {
+⋮----
+input,
+⋮----
+input:focus,
+⋮----
+textarea {
+⋮----
+.dashboard-shell {
+⋮----
+.sidebar {
+⋮----
+.sidebar-device,
+⋮----
+.sidebar-device {
+⋮----
+.device-mark,
+⋮----
+.device-name {
+⋮----
+.device-subtitle,
+⋮----
+.sidebar-nav {
+⋮----
+.nav-item,
+⋮----
+.nav-item:hover,
+⋮----
+.nav-item.active,
+⋮----
+.nav-dot {
+⋮----
+.nav-item.active .nav-dot,
+⋮----
+.module-item:disabled {
+⋮----
+.module-tabs {
+⋮----
+.module-tab {
+⋮----
+.module-tab.active {
+⋮----
+.sidebar-group {
+⋮----
+.sidebar-foot {
+⋮----
+.foot-value {
+⋮----
+.main-shell {
+⋮----
+.topbar {
+⋮----
+.topbar-kicker,
+⋮----
+.topbar h1,
+⋮----
+.topbar h1 {
+⋮----
+.topbar p,
+⋮----
+.admin-panel {
+⋮----
+.token-field {
+⋮----
+.token-field span {
+⋮----
+.content-shell {
+⋮----
+.section-head {
+⋮----
+.status-grid,
+⋮----
+.status-grid {
+⋮----
+.panel-grid {
+⋮----
+.panel-grid-wide {
+⋮----
+.status-card,
+⋮----
+.status-card {
+⋮----
+.status-label {
+⋮----
+.status-value {
+⋮----
+.status-hint {
+⋮----
+.tone-good {
+⋮----
+.tone-warn {
+⋮----
+.panel {
+⋮----
+.panel-title-row {
+⋮----
+.panel-title-row h3,
+⋮----
+.panel-badge,
+⋮----
+.panel-badge.warn {
+⋮----
+.hero-panel {
+⋮----
+.hero-copy p {
+⋮----
+.hero-actions,
+⋮----
+.action,
+⋮----
+.action:hover,
+⋮----
+.action.primary {
+⋮----
+.action.danger {
+⋮----
+.mini-action {
+⋮----
+.mini-action.active {
+⋮----
+.field-stack {
+⋮----
+.field-stack label {
+⋮----
+.alias-grid {
+⋮----
+.service-grid {
+⋮----
+.service-card {
+⋮----
+.empty-panel {
+⋮----
+.list-shell {
+⋮----
+.list-shell.compact {
+⋮----
+.list-row {
+⋮----
+.list-row.stack {
+⋮----
+.list-title {
+⋮----
+.list-subtitle {
+⋮----
+.empty-state {
+⋮----
+.code-block {
+⋮----
+.flash-message {
+⋮----
+.panel-grid,
+</file>
+
+<file path="app/layout.tsx">
+export default function RootLayout(
+</file>
+
+<file path="app/page.tsx">
+import { HomeServerDashboard } from "@/src/features/dashboard/HomeServerDashboard";
+⋮----
+export default function Page()
+</file>
+
+<file path="src/components/ui/SectionHeader.tsx">
+export function SectionHeader({
+  title,
+  eyebrow,
+  detail,
+}: {
+  title: string;
+  eyebrow: string;
+  detail: string;
+})
+</file>
+
+<file path="src/components/ui/StatusCard.tsx">
+export function StatusCard({
+  label,
+  value,
+  hint,
+  tone = "neutral",
+}: {
+  label: string;
+  value: string;
+  hint: string;
+  tone?: "neutral" | "good" | "warn";
+})
+</file>
+
+<file path="src/features/dashboard/HomeServerDashboard.tsx">
+import { useEffect, useMemo, useState } from "react";
+⋮----
+import { SectionHeader } from "@/src/components/ui/SectionHeader";
+import { StatusCard } from "@/src/components/ui/StatusCard";
+import { OpnsenseModule } from "@/src/modules/opnsense/OpnsenseModule";
+import type {
+  DeviceRow,
+  DnsblLists,
+  Preflight,
+} from "@/src/modules/opnsense/types";
+import {
+  countAllChecks,
+  countOkChecks,
+  extractRuntimeRows,
+  getApiBase,
+} from "@/src/modules/opnsense/utils";
+⋮----
+type ServiceSummary = {
+  name: string;
+  status: "healthy" | "degraded" | "planned";
+  detail: string;
+};
+⋮----
+async function loadDnsbl()
+⋮----
+async function toggleDnsbl(uuid: string, enabled: boolean)
+⋮----
+async function setFamilyMode(enabled: boolean)
+⋮----
+async function addException(listType: "allowlists" | "blocklists")
+⋮----
+async function callControl(path: string, enabled: boolean)
+⋮----
+async function loadDevices()
+⋮----
+async function setDeviceTimeout(minutes: 30 | 60 | 120)
+⋮----
+async function loadBlockedSites()
+⋮----
+async function addBlockedSite()
+⋮----
+async function removeBlockedSite(domain: string)
+⋮----
+async function loadWarningMessage()
+⋮----
+async function saveWarningMessage()
+⋮----
+async function refreshDiscovery()
+⋮----
+async function loadUsage()
+⋮----
+async function replace(which: "allowed" | "blocked")
+⋮----
+onClick=
+</file>
+
+<file path="src/modules/media/README.md">
+# Media Module
+
+Planned location for media-service modules such as Plex or Jellyfin.
+</file>
+
+<file path="src/modules/observability/README.md">
+# Observability Module
+
+Planned location for monitoring and observability modules such as Grafana.
+</file>
+
+<file path="src/modules/opnsense/OpnsenseModule.tsx">
+import { StatusCard } from "@/src/components/ui/StatusCard";
+import type { OpnsenseModuleProps } from "./types";
+⋮----
+export function OpnsenseModule({
+  apiBase,
+  checksOk,
+  checksTotal,
+  dnsRows,
+  dnsEnabled,
+  devices,
+  selectedDeviceId,
+  setSelectedDeviceId,
+  blockedRows,
+  preflight,
+  warningMessage,
+  setWarningMessage,
+  allowed,
+  setAllowed,
+  blocked,
+  setBlocked,
+  siteDomain,
+  setSiteDomain,
+  dnsblExceptionUuid,
+  setDnsblExceptionUuid,
+  dnsblDomain,
+  setDnsblDomain,
+  usage,
+  loadDevices,
+  loadDnsbl,
+  refreshDiscovery,
+  callControl,
+  setDeviceTimeout,
+  loadWarningMessage,
+  saveWarningMessage,
+  replace,
+  loadBlockedSites,
+  addBlockedSite,
+  removeBlockedSite,
+  setFamilyMode,
+  toggleDnsbl,
+  addException,
+  loadUsage,
+  setMsg,
+}: OpnsenseModuleProps)
+⋮----
+onClick=
+</file>
+
+<file path="src/modules/opnsense/types.ts">
+export type PreflightCheck = {
+  ok?: boolean;
+  payload?: unknown;
+  error?: string;
+};
+⋮----
+export type Preflight = {
+  opnsense_base_url: string;
+  checks: Record<string, PreflightCheck>;
+  notes: string[];
+};
+⋮----
+export type DnsblLists = {
+  rows?: Array<{
+    uuid: string;
+    enabled: string;
+    description?: string;
+    url?: string;
+    type?: string;
+  }>;
+  [k: string]: unknown;
+};
+⋮----
+export type DeviceRow = {
+  id: string;
+  name: string;
+  mac: string;
+  last_ip?: string;
+};
+⋮----
+export type OpnsenseModuleProps = {
+  apiBase: string;
+  checksOk: number;
+  checksTotal: number;
+  dnsRows: DnsblLists["rows"];
+  dnsEnabled: number;
+  devices: DeviceRow[];
+  selectedDeviceId: string;
+  setSelectedDeviceId: (value: string) => void;
+  blockedRows: Array<Record<string, unknown>>;
+  preflight: Preflight | null;
+  warningMessage: string;
+  setWarningMessage: (value: string) => void;
+  allowed: string;
+  setAllowed: (value: string) => void;
+  blocked: string;
+  setBlocked: (value: string) => void;
+  siteDomain: string;
+  setSiteDomain: (value: string) => void;
+  dnsblExceptionUuid: string;
+  setDnsblExceptionUuid: (value: string) => void;
+  dnsblDomain: string;
+  setDnsblDomain: (value: string) => void;
+  usage: unknown;
+  loadDevices: () => Promise<void>;
+  loadDnsbl: () => Promise<void>;
+  refreshDiscovery: () => Promise<void>;
+  callControl: (path: string, enabled: boolean) => Promise<void>;
+  setDeviceTimeout: (minutes: 30 | 60 | 120) => Promise<void>;
+  loadWarningMessage: () => Promise<void>;
+  saveWarningMessage: () => Promise<void>;
+  replace: (which: "allowed" | "blocked") => Promise<void>;
+  loadBlockedSites: () => Promise<void>;
+  addBlockedSite: () => Promise<void>;
+  removeBlockedSite: (domain: string) => Promise<void>;
+  setFamilyMode: (enabled: boolean) => Promise<void>;
+  toggleDnsbl: (uuid: string, enabled: boolean) => Promise<void>;
+  addException: (listType: "allowlists" | "blocklists") => Promise<void>;
+  loadUsage: () => Promise<void>;
+  setMsg: (value: string | null) => void;
+};
+</file>
+
+<file path="src/modules/opnsense/utils.ts">
+import type { Preflight } from "./types";
+⋮----
+export function getApiBase()
+⋮----
+export function countOkChecks(preflight: Preflight | null): number
+⋮----
+export function countAllChecks(preflight: Preflight | null): number
+⋮----
+export function extractRuntimeRows(
+  payload: unknown,
+): Array<Record<string, unknown>>
+</file>
+
+<file path="src/modules/storage/README.md">
+# Storage Module
+
+Planned location for storage and backup modules.
+</file>
+
+<file path="src/modules/tailscale/README.md">
+# Tailscale Module
+
+Planned location for the Tailscale network module.
+</file>
+
+<file path="src/modules/README.md">
+# Frontend Modules
+
+Each folder in this directory should represent one service or subsystem inside the homeserver dashboard.
+
+Rules:
+
+- Keep service-specific code inside its own module first.
+- Only move code out when it is shared by more than one module.
+- Avoid growing `features/dashboard/` into a second home for module logic.
+
+Current:
+
+- `opnsense/` live module
+
+Planned:
+
+- `tailscale/`
+- `media/`
+- `storage/`
+- `observability/`
+</file>
+
+<file path="src/types/README.md">
+# Frontend Types
+
+Shared frontend-only types should live here once they are reused across modules.
+</file>
+
+<file path="Dockerfile">
+FROM node:20-alpine
+
+WORKDIR /app
+
+COPY package.json package-lock.json* /app/
+RUN npm install
+
+COPY . /app
+
+EXPOSE 3000
+
+CMD ["npm", "run", "dev", "--", "--hostname", "0.0.0.0", "--port", "3000"]
+</file>
+
+<file path="next-env.d.ts">
+/// <reference types="next" />
+/// <reference types="next/image-types/global" />
+⋮----
+// This file is managed by Next.js and should not be edited manually.
+</file>
+
+<file path="next.config.js">
+/** @type {import('next').NextConfig} */
+</file>
+
+<file path="package.json">
+{
+  "name": "opnsense-parental-dashboard-web",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "15.3.3",
+    "react": "19.1.0",
+    "react-dom": "19.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "@types/react": "^19.0.10",
+    "typescript": "^5.8.2"
+  }
+}
+</file>
+
+<file path="tsconfig.json">
+{
+  "compilerOptions": {
+    "target": "ES2017",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": false,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"]
+    },
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
+}
+</file>
+
+</files>

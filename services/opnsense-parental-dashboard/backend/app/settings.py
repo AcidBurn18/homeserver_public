@@ -20,13 +20,10 @@ class Settings(BaseSettings):
     family_dnsbl_uuids: str | None = None
     dnsbl_exception_uuid: str | None = None
 
-    # OPNsense Firewall Automation rule UUIDs (optional, for toggles)
-    internet_kill_rule_uuid: str | None = None
-    guest_mute_rule_uuid: str | None = None
+    # OPNsense Firewall Automation rule UUIDs
     bedtime_rule_uuid: str | None = None
 
     database_url: str
 
 
 settings = Settings()  # type: ignore[call-arg]
-

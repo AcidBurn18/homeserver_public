@@ -1,0 +1,95 @@
+http:
+  middlewares:
+    redirect-to-https:
+      redirectScheme:
+        scheme: https
+        permanent: true
+
+    secure-headers-light:
+      headers:
+        contentTypeNosniff: true
+        referrerPolicy: "strict-origin-when-cross-origin"
+        stsSeconds: 31536000
+        stsIncludeSubdomains: true
+        stsPreload: false
+
+    secure-headers-strict:
+      headers:
+        contentTypeNosniff: true
+        frameDeny: true
+        referrerPolicy: "strict-origin-when-cross-origin"
+        stsSeconds: 31536000
+        stsIncludeSubdomains: true
+        stsPreload: false
+        permissionsPolicy: "camera=(), microphone=(), geolocation=()"
+
+    nextcloud-secure-headers:
+      headers:
+        stsSeconds: 15552000
+        stsIncludeSubdomains: true
+        stsPreload: false
+        forceSTSHeader: true
+        customRequestHeaders:
+          X-Forwarded-Proto: "https"
+          X-Forwarded-Ssl: "on"
+          X-Forwarded-Port: "443"
+
+    nextcloud-dav:
+      redirectRegex:
+        permanent: true
+        regex: "https://(.*)/.well-known/(?:card|cal)dav"
+        replacement: "https://${1}/remote.php/dav"
+
+    ha-secure-headers:
+      headers:
+        contentTypeNosniff: true
+        referrerPolicy: "strict-origin-when-cross-origin"
+        stsSeconds: 31536000
+        stsIncludeSubdomains: true
+        stsPreload: false
+        customRequestHeaders:
+          X-Forwarded-Proto: "https"
+          X-Forwarded-Ssl: "on"
+
+    rate-limit-normal:
+      rateLimit:
+        average: 100
+        burst: 50
+
+    rate-limit-admin:
+      rateLimit:
+        average: 20
+        burst: 10
+
+    compress-normal:
+      compress: {}
+
+    media-chain:
+      chain:
+        middlewares:
+          - secure-headers-light
+
+    app-chain:
+      chain:
+        middlewares:
+          - secure-headers-strict
+          - rate-limit-normal
+          - compress-normal
+
+    admin-chain:
+      chain:
+        middlewares:
+          - secure-headers-strict
+          - rate-limit-admin
+          - compress-normal
+
+    nextcloud-chain:
+      chain:
+        middlewares:
+          - nextcloud-secure-headers
+          - nextcloud-dav
+
+    ha-chain:
+      chain:
+        middlewares:
+          - ha-secure-headers

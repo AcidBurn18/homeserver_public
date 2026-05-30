@@ -1,0 +1,77 @@
+services:
+  step-ca:
+    image: smallstep/step-ca:0.27.4
+    container_name: step-ca
+    restart: unless-stopped
+    environment:
+      - STEPPATH=/home/step
+      - STEP_CA_PASSWORD=${STEP_CA_PASSWORD}
+      - DOCKER_STEPCA_INIT_NAME=${STEPCA_INIT_NAME:-HomeLab}
+      - DOCKER_STEPCA_INIT_DNS_NAMES=${STEPCA_INIT_DNS_NAMES:-step-ca,localhost}
+      - DOCKER_STEPCA_INIT_ADDRESS=${STEPCA_INIT_ADDRESS:-:9000}
+      - DOCKER_STEPCA_INIT_PROVISIONER_NAME=${STEPCA_INIT_PROVISIONER_NAME:-admin}
+      - DOCKER_STEPCA_INIT_PASSWORD=${STEP_CA_PASSWORD}
+      - DOCKER_STEPCA_INIT_ACME=true
+    volumes:
+      - step_ca:/home/step
+    ports:
+      - "${STEP_CA_PORT:-9000}:9000"
+
+  traefik:
+    image: traefik:v3.1
+    container_name: traefik
+    restart: unless-stopped
+    depends_on:
+      - step-ca
+
+    command:
+      - --api.dashboard=true
+      - --api.insecure=true
+
+      - --providers.file.directory=/etc/traefik/dynamic
+      - --providers.file.watch=true
+
+      - --entrypoints.web.address=:80
+      - --entrypoints.websecure.address=:443
+      - --entrypoints.metrics.address=:9100
+
+      - --log.level=INFO
+
+      - --accesslog=true
+      - --accesslog.filepath=/var/log/traefik/access.log
+      - --accesslog.format=json
+      - --accesslog.bufferingsize=100
+      - --accesslog.fields.defaultmode=keep
+      - --accesslog.fields.headers.defaultmode=drop
+      - --accesslog.fields.headers.names.User-Agent=keep
+      - --accesslog.fields.headers.names.Referer=keep
+
+      - --metrics.prometheus=true
+      - --metrics.prometheus.entrypoint=metrics
+      - --metrics.prometheus.addentrypointslabels=true
+      - --metrics.prometheus.addrouterslabels=true
+      - --metrics.prometheus.addserviceslabels=true
+
+    ports:
+      - "80:80"
+      - "443:443"
+      - "8090:8080"
+      - "${HOST_IP}:9100:9100"
+
+    volumes:
+      - traefik_data:/data
+      - ./dynamic:/etc/traefik/dynamic:ro
+      - ./certs:/etc/traefik/certs:ro
+      - ./logs:/var/log/traefik
+      - step_ca:/step-ca:ro
+
+  fallback-site:
+    image: nginx:alpine
+    container_name: fallback-site
+    restart: unless-stopped
+    volumes:
+      - ./fallback:/usr/share/nginx/html:ro
+
+volumes:
+  traefik_data:
+  step_ca:

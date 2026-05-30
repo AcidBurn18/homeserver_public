@@ -1,0 +1,98 @@
+This file is a merged representation of the entire codebase, combined into a single document by Repomix.
+The content has been processed where content has been compressed (code blocks are separated by ⋮---- delimiter).
+
+<file_summary>
+This section contains a summary of this file.
+
+<purpose>
+This file contains a packed representation of the entire repository's contents.
+It is designed to be easily consumable by AI systems for analysis, code review,
+or other automated processes.
+</purpose>
+
+<file_format>
+The content is organized as follows:
+1. This summary section
+2. Repository information
+3. Directory structure
+4. Repository files (if enabled)
+5. Multiple file entries, each consisting of:
+  - File path as an attribute
+  - Full contents of the file
+</file_format>
+
+<usage_guidelines>
+- This file should be treated as read-only. Any changes should be made to the
+  original repository files, not this packed version.
+- When processing this file, use the file path to distinguish
+  between different files in the repository.
+- Be aware that this file may contain sensitive information. Handle it with
+  the same level of security as you would the original repository.
+</usage_guidelines>
+
+<notes>
+- Some files may have been excluded based on .gitignore rules and Repomix's configuration
+- Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files
+- Files matching patterns in .gitignore are excluded
+- Files matching default ignore patterns are excluded
+- Content has been compressed - code blocks are separated by ⋮---- delimiter
+- Files are sorted by Git change count (files with more changes are at the bottom)
+</notes>
+
+</file_summary>
+
+<directory_structure>
+opnsense-firewall-rules.md
+</directory_structure>
+
+<files>
+This section contains the contents of the repository's files.
+
+<file path="opnsense-firewall-rules.md">
+# OPNsense firewall rules template (mixed LAN)
+
+This project assumes kids devices are **mixed on the same LAN**. We enforce controls by keeping alias membership up to date and having firewall rules reference those aliases.
+
+## Aliases this dashboard manages (defaults)
+- `PARENT_DASH_ALLOWED_IPS` (host alias)
+- `PARENT_DASH_BLOCKED_IPS` (host alias)
+
+You can rename them via `.env` (`ALIAS_ALLOWED_IPS`, `ALIAS_BLOCKED_IPS`).
+
+## Recommended rule order (LAN interface)
+Create these rules on your LAN (or the interface where the kids devices live). Order matters: OPNsense matches **top to bottom**.
+
+1) Allow “always allowed” devices
+- **Action**: Pass
+- **Source**: `PARENT_DASH_ALLOWED_IPS`
+- **Destination**: any
+- **Description**: `PARENT_DASH allow (always)`
+
+2) Block “currently blocked” devices (schedule driven)
+- **Action**: Block (or Reject)
+- **Source**: `PARENT_DASH_BLOCKED_IPS`
+- **Destination**: any
+- **Description**: `PARENT_DASH block (schedule)`
+
+3) Your normal LAN rules (existing)
+
+## DNS hardening (recommended)
+To reduce bypass on mixed LAN:
+
+1) Create an alias for allowed DNS resolvers (usually just OPNsense LAN IP)
+- Example alias: `PARENT_DASH_ALLOWED_DNS`
+- Content: `192.168.1.1` (your OPNsense LAN IP)
+
+2) Add a rule above general pass rules:
+- **Pass**: LAN net → `PARENT_DASH_ALLOWED_DNS` on port 53/853 (as you prefer)
+
+3) Add a rule to block external DNS:
+- **Block**: LAN net → any on port 53/853
+
+This ensures devices can’t easily bypass your DNS filtering by changing DNS to `8.8.8.8`.
+
+## DHCP static mappings (recommended)
+Static mappings make it harder for devices to evade controls by IP changes and makes MAC → IP mapping stable.
+</file>
+
+</files>

@@ -1,0 +1,778 @@
+This file is a merged representation of the entire codebase, combined into a single document by Repomix.
+The content has been processed where content has been compressed (code blocks are separated by ⋮---- delimiter).
+
+<file_summary>
+This section contains a summary of this file.
+
+<purpose>
+This file contains a packed representation of the entire repository's contents.
+It is designed to be easily consumable by AI systems for analysis, code review,
+or other automated processes.
+</purpose>
+
+<file_format>
+The content is organized as follows:
+1. This summary section
+2. Repository information
+3. Directory structure
+4. Repository files (if enabled)
+5. Multiple file entries, each consisting of:
+  - File path as an attribute
+  - Full contents of the file
+</file_format>
+
+<usage_guidelines>
+- This file should be treated as read-only. Any changes should be made to the
+  original repository files, not this packed version.
+- When processing this file, use the file path to distinguish
+  between different files in the repository.
+- Be aware that this file may contain sensitive information. Handle it with
+  the same level of security as you would the original repository.
+</usage_guidelines>
+
+<notes>
+- Some files may have been excluded based on .gitignore rules and Repomix's configuration
+- Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files
+- Files matching patterns in .gitignore are excluded
+- Files matching default ignore patterns are excluded
+- Content has been compressed - code blocks are separated by ⋮---- delimiter
+- Files are sorted by Git change count (files with more changes are at the bottom)
+</notes>
+
+</file_summary>
+
+<directory_structure>
+app/
+  routers/
+    __init__.py
+    aliases.py
+    audit.py
+    content.py
+    control.py
+    devices.py
+    discovery.py
+    dnsbl.py
+    health.py
+    profiles.py
+    schedules.py
+    usage.py
+  __init__.py
+  audit.py
+  db.py
+  main.py
+  models.py
+  opnsense_client.py
+  scheduler.py
+  security.py
+  settings.py
+  worker.py
+Dockerfile
+requirements.txt
+</directory_structure>
+
+<files>
+This section contains the contents of the repository's files.
+
+<file path="app/routers/__init__.py">
+
+</file>
+
+<file path="app/routers/aliases.py">
+router = APIRouter(prefix="/api/aliases", tags=["aliases"])
+⋮----
+class AliasReplaceRequest(BaseModel)
+⋮----
+name: str = Field(..., description="OPNsense alias name")
+type: str = Field("host", description="Alias type, e.g. host, network, urltable (OPNsense types)")
+description: str = ""
+content: list[str] = Field(default_factory=list, description="One entry per line (IP/CIDR/host depending on type)")
+apply: bool = True
+⋮----
+@router.get("/runtime/{name}", dependencies=[Depends(require_admin)])
+def runtime_list(name: str) -> dict[str, object]
+⋮----
+"""
+    Lists the *runtime table* for an alias (pf table), not the config.
+    Useful for confirming enforcement quickly.
+    """
+c = OPNsenseClient()
+⋮----
+class AliasEntryRequest(BaseModel)
+⋮----
+address: str
+⋮----
+@router.post("/runtime/{name}/add", dependencies=[Depends(require_admin)])
+def runtime_add(name: str, req: AliasEntryRequest) -> dict[str, object]
+⋮----
+res = c.alias_util_add(name, req.address)
+⋮----
+@router.post("/runtime/{name}/delete", dependencies=[Depends(require_admin)])
+def runtime_delete(name: str, req: AliasEntryRequest) -> dict[str, object]
+⋮----
+res = c.alias_util_delete(name, req.address)
+⋮----
+@router.post("/replace", dependencies=[Depends(require_admin)])
+def replace_alias(req: AliasReplaceRequest, db: Session = Depends(get_db)) -> dict[str, object]
+⋮----
+previous: dict[str, object] | None = None
+existing_uuid = c.alias_get_uuid_by_name(req.name)
+⋮----
+previous = c.alias_get_item(existing_uuid)
+⋮----
+previous = None
+⋮----
+uuid = c.alias_add_or_replace(name=req.name, alias_type=req.type, content_lines=req.content, description=req.description)
+⋮----
+@router.post("/replace/allowed_ips", dependencies=[Depends(require_admin)])
+def replace_allowed_ips(req: AliasReplaceRequest) -> dict[str, object]
+⋮----
+@router.post("/replace/blocked_ips", dependencies=[Depends(require_admin)])
+def replace_blocked_ips(req: AliasReplaceRequest) -> dict[str, object]
+⋮----
+@router.post("/rollback/{name}", dependencies=[Depends(require_admin)])
+def rollback_alias(name: str, db: Session = Depends(get_db)) -> dict[str, object]
+⋮----
+"""
+    Best-effort rollback: find the most recent alias.replace audit event for this alias and
+    re-apply its captured `previous.alias.content` if present.
+    """
+events = db.scalars(
+⋮----
+details = json.loads(e.details)
+⋮----
+prev = details.get("previous") or {}
+alias = prev.get("alias") if isinstance(prev, dict) else None
+content = None
+⋮----
+content = alias.get("content")
+⋮----
+lines = [ln.strip() for ln in content.splitlines() if ln.strip()]
+</file>
+
+<file path="app/routers/audit.py">
+router = APIRouter(prefix="/api/audit", tags=["audit"])
+⋮----
+@router.get("", dependencies=[Depends(require_admin)])
+def list_events(db: Session = Depends(get_db), limit: int = 50) -> list[dict[str, object]]
+⋮----
+items = db.scalars(select(AuditEvent).order_by(AuditEvent.created_at.desc()).limit(limit)).all()
+</file>
+
+<file path="app/routers/content.py">
+router = APIRouter(prefix="/api/content", tags=["content"])
+⋮----
+class DomainRequest(BaseModel)
+⋮----
+domain: str
+⋮----
+def _norm_domain(domain: str) -> str
+⋮----
+d = domain.strip().lower()
+⋮----
+@router.get("/blocked_sites", dependencies=[Depends(require_admin)])
+def blocked_sites() -> dict[str, object]
+⋮----
+c = OPNsenseClient()
+res = c.alias_util_list(settings.alias_site_block_domains)
+⋮----
+@router.post("/blocked_sites/add", dependencies=[Depends(require_admin)])
+def blocked_sites_add(req: DomainRequest) -> dict[str, object]
+⋮----
+d = _norm_domain(req.domain)
+⋮----
+# Also put into DNSBL blocklist for immediate DNS-based enforcement when configured.
+⋮----
+@router.post("/blocked_sites/delete", dependencies=[Depends(require_admin)])
+def blocked_sites_delete(req: DomainRequest) -> dict[str, object]
+</file>
+
+<file path="app/routers/control.py">
+router = APIRouter(prefix="/api/control", tags=["control"])
+⋮----
+class ToggleRequest(BaseModel)
+⋮----
+enabled: bool
+⋮----
+def _toggle_rule(rule_uuid: str | None, enabled: bool) -> dict
+⋮----
+c = OPNsenseClient()
+res = c.firewall_toggle_rule(rule_uuid, enabled=enabled)
+⋮----
+# Removed internet_killswitch and guest_mute endpoints
+⋮----
+@router.post("/bedtime_lock", dependencies=[Depends(require_admin)])
+def bedtime_lock(req: ToggleRequest, db: Session = Depends(get_db)) -> dict[str, object]
+⋮----
+# Uses an Automation rule UUID if configured.
+res = _toggle_rule(settings.bedtime_rule_uuid, req.enabled)
+⋮----
+class TimeoutRequest(BaseModel)
+⋮----
+device_id: str
+minutes: int
+⋮----
+@router.post("/device_timeout", dependencies=[Depends(require_admin)])
+def device_timeout(req: TimeoutRequest, db: Session = Depends(get_db)) -> dict[str, object]
+⋮----
+d = db.scalar(select(Device).where(Device.id == req.device_id))
+⋮----
+item = TimeoutBlock(
+⋮----
+class WarningMessageRequest(BaseModel)
+⋮----
+message: str
+⋮----
+@router.get("/warning_redirect_message", dependencies=[Depends(require_admin)])
+def get_warning_message(db: Session = Depends(get_db)) -> dict[str, object]
+⋮----
+row = db.scalar(select(AppSetting).where(AppSetting.key == "warning_redirect_message"))
+⋮----
+@router.post("/warning_redirect_message", dependencies=[Depends(require_admin)])
+def set_warning_message(req: WarningMessageRequest, db: Session = Depends(get_db)) -> dict[str, object]
+</file>
+
+<file path="app/routers/devices.py">
+router = APIRouter(prefix="/api/devices", tags=["devices"])
+⋮----
+class DeviceIn(BaseModel)
+⋮----
+name: str
+mac: str
+last_ip: str | None = None
+profile_id: str | None = None
+notes: str | None = None
+enabled: bool = True
+⋮----
+@router.get("", dependencies=[Depends(require_admin)])
+def list_devices(db: Session = Depends(get_db)) -> list[dict[str, object]]
+⋮----
+items = db.scalars(select(Device).order_by(Device.name.asc())).all()
+⋮----
+@router.post("", dependencies=[Depends(require_admin)])
+def create_device(body: DeviceIn, db: Session = Depends(get_db)) -> dict[str, object]
+⋮----
+d = Device(
+</file>
+
+<file path="app/routers/discovery.py">
+router = APIRouter(prefix="/api/discovery", tags=["discovery"])
+⋮----
+def _norm_mac(mac: str) -> str
+⋮----
+def _rows(payload: dict[str, object]) -> list[dict[str, object]]
+⋮----
+rows = payload.get(key)
+⋮----
+@router.get("/snapshot", dependencies=[Depends(require_admin)])
+def snapshot() -> dict[str, object]
+⋮----
+"""
+    Returns raw discovery sources (best-effort). Useful when adapting to your OPNsense version.
+    """
+c = OPNsenseClient()
+out: dict[str, object] = {"arp": None, "dhcp": None, "errors": []}
+⋮----
+@router.post("/refresh", dependencies=[Depends(require_admin)])
+def refresh(db: Session = Depends(get_db)) -> dict[str, object]
+⋮----
+"""
+    Best-effort update: refresh Device.last_ip and Device.last_seen_at from ARP/DHCP.
+    This supports the mixed-LAN model where we enforce by IP aliases.
+    """
+⋮----
+arp = {}
+dhcp = {}
+⋮----
+arp_payload = c.diagnostics_get_arp()
+# OPNsense variants return ARP rows under either `rows` or `data`.
+⋮----
+ip = row.get("ipaddress") or row.get("ip") or row.get("address")
+mac = row.get("macaddress") or row.get("mac") or row.get("mac_address")
+⋮----
+dhcp_payload = c.dhcp_leases4_search()
+# OPNsense variants return DHCP lease rows under either `rows` or `data`.
+⋮----
+ip = row.get("address") or row.get("ip") or row.get("ipaddress")
+mac = row.get("hwaddr") or row.get("mac") or row.get("macaddress")
+⋮----
+now = datetime.now(timezone.utc)
+updated = 0
+⋮----
+devices = db.scalars(select(Device)).all()
+⋮----
+mac = _norm_mac(d.mac)
+ip = dhcp.get(mac) or arp.get(mac)
+</file>
+
+<file path="app/routers/dnsbl.py">
+router = APIRouter(prefix="/api/dnsbl", tags=["dnsbl"])
+⋮----
+@router.get("/status", dependencies=[Depends(require_admin)])
+def status() -> dict[str, object]
+⋮----
+c = OPNsenseClient()
+⋮----
+@router.get("/lists", dependencies=[Depends(require_admin)])
+def lists() -> dict[str, object]
+⋮----
+class ToggleRequest(BaseModel)
+⋮----
+uuid: str
+enabled: bool
+reconfigure: bool = True
+⋮----
+@router.post("/toggle", dependencies=[Depends(require_admin)])
+def toggle(req: ToggleRequest, db=Depends(get_db)) -> dict[str, object]
+⋮----
+res = c.unbound_toggle_dnsbl(req.uuid, req.enabled)
+⋮----
+class FamilyModeRequest(BaseModel)
+⋮----
+enabled: bool = True
+⋮----
+@router.post("/family_mode", dependencies=[Depends(require_admin)])
+def family_mode(req: FamilyModeRequest, db=Depends(get_db)) -> dict[str, object]
+⋮----
+"""
+    Enables (or disables) a configured set of DNSBL UUIDs.
+    Configure via env: FAMILY_DNSBL_UUIDS (comma-separated).
+    """
+⋮----
+uuids = [u.strip() for u in settings.family_dnsbl_uuids.split(",") if u.strip()]
+⋮----
+results = []
+⋮----
+class ExceptionRequest(BaseModel)
+⋮----
+domain: str
+list_type: str  # allowlists | blocklists
+⋮----
+@router.post("/exception", dependencies=[Depends(require_admin)])
+def upsert_exception(req: ExceptionRequest, db=Depends(get_db)) -> dict[str, object]
+⋮----
+res = c.unbound_update_blocklist(uuid=req.uuid, domain=req.domain, list_type=req.list_type)
+</file>
+
+<file path="app/routers/health.py">
+router = APIRouter()
+⋮----
+@router.get("/healthz")
+def healthz() -> dict[str, str]
+⋮----
+@router.get("/api/preflight")
+def preflight() -> dict[str, object]
+⋮----
+"""
+    Attempts a few read-only calls to detect feature availability.
+    This is how we 'confirm' your OPNsense capabilities in a repeatable way.
+    """
+c = OPNsenseClient()
+result: dict[str, object] = {
+⋮----
+def run_check(name: str, fn)
+⋮----
+payload = fn()
+</file>
+
+<file path="app/routers/profiles.py">
+router = APIRouter(prefix="/api/profiles", tags=["profiles"])
+⋮----
+class ProfileIn(BaseModel)
+⋮----
+name: str
+⋮----
+@router.get("", dependencies=[Depends(require_admin)])
+def list_profiles(db: Session = Depends(get_db)) -> list[dict[str, object]]
+⋮----
+items = db.scalars(select(Profile).order_by(Profile.name.asc())).all()
+⋮----
+@router.post("", dependencies=[Depends(require_admin)])
+def create_profile(body: ProfileIn, db: Session = Depends(get_db)) -> dict[str, object]
+⋮----
+p = Profile(id=str(uuid4()), name=body.name)
+</file>
+
+<file path="app/routers/schedules.py">
+router = APIRouter(prefix="/api/schedules", tags=["schedules"])
+⋮----
+class ScheduleIn(BaseModel)
+⋮----
+profile_id: str
+name: str
+definition: dict = Field(
+enabled: bool = True
+⋮----
+@router.get("", dependencies=[Depends(require_admin)])
+def list_schedules(db: Session = Depends(get_db)) -> list[dict[str, object]]
+⋮----
+items = db.scalars(select(Schedule).order_by(Schedule.created_at.desc())).all()
+⋮----
+@router.post("", dependencies=[Depends(require_admin)])
+def create_schedule(body: ScheduleIn, db: Session = Depends(get_db)) -> dict[str, object]
+⋮----
+s = Schedule(
+⋮----
+@router.post("/apply_now", dependencies=[Depends(require_admin)])
+def apply_now(db: Session = Depends(get_db)) -> dict[str, object]
+⋮----
+decision = compute_blocked_ips(db, now=datetime.utcnow())
+c = OPNsenseClient()
+</file>
+
+<file path="app/routers/usage.py">
+router = APIRouter(prefix="/api/usage", tags=["usage"])
+⋮----
+@router.get("/top_talkers", dependencies=[Depends(require_admin)])
+def top_talkers(db: Session = Depends(get_db)) -> dict[str, object]
+⋮----
+"""
+    Best-effort first-pass usage:
+    - Returns OPNsense 'Top Talkers' raw payload
+    - Adds a simple per-device view by matching Device.last_ip
+    """
+c = OPNsenseClient()
+⋮----
+payload = c.diagnostics_traffic_top()
+⋮----
+devices = db.scalars(select(Device).where(Device.enabled == True)).all()  # noqa: E712
+devices_by_ip = {d.last_ip: d for d in devices if d.last_ip}
+⋮----
+device_rows = []
+⋮----
+ip = row.get("ip") or row.get("address") or row.get("src") or row.get("host")
+⋮----
+d = devices_by_ip.get(ip)
+</file>
+
+<file path="app/__init__.py">
+
+</file>
+
+<file path="app/audit.py">
+def audit(db: Session, *, actor: str, action: str, details: dict) -> None
+⋮----
+ev = AuditEvent(
+</file>
+
+<file path="app/db.py">
+class Base(DeclarativeBase)
+⋮----
+engine = create_engine(settings.database_url, pool_pre_ping=True)
+SessionLocal = sessionmaker(bind=engine, autoflush=False, autocommit=False)
+⋮----
+def get_db() -> Session
+⋮----
+db = SessionLocal()
+</file>
+
+<file path="app/main.py">
+app = FastAPI(title="OPNsense Parental Dashboard API")
+⋮----
+@app.on_event("startup")
+def _startup() -> None
+⋮----
+# v1: lightweight schema creation (no migrations yet)
+</file>
+
+<file path="app/models.py">
+class Profile(Base)
+⋮----
+__tablename__ = "profiles"
+⋮----
+id: Mapped[str] = mapped_column(String(36), primary_key=True)
+name: Mapped[str] = mapped_column(String(128), unique=True, nullable=False)
+created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=datetime.utcnow, nullable=False)
+⋮----
+devices: Mapped[list["Device"]] = relationship(back_populates="profile")
+⋮----
+class Device(Base)
+⋮----
+__tablename__ = "devices"
+⋮----
+name: Mapped[str] = mapped_column(String(128), nullable=False)
+mac: Mapped[str] = mapped_column(String(32), unique=True, nullable=False)
+last_ip: Mapped[str | None] = mapped_column(String(64), nullable=True)
+notes: Mapped[str | None] = mapped_column(Text, nullable=True)
+enabled: Mapped[bool] = mapped_column(Boolean, default=True, nullable=False)
+last_seen_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+⋮----
+profile_id: Mapped[str | None] = mapped_column(String(36), ForeignKey("profiles.id"), nullable=True)
+profile: Mapped[Profile | None] = relationship(back_populates="devices")
+⋮----
+class Schedule(Base)
+⋮----
+__tablename__ = "schedules"
+⋮----
+profile_id: Mapped[str] = mapped_column(String(36), ForeignKey("profiles.id"), nullable=False)
+⋮----
+# JSON string for now (keeps v1 simple); later we can normalize.
+definition_json: Mapped[str] = mapped_column(Text, nullable=False)
+⋮----
+class AuditEvent(Base)
+⋮----
+__tablename__ = "audit_events"
+⋮----
+actor: Mapped[str] = mapped_column(String(64), nullable=False)  # e.g., \"admin\" or \"worker\"
+action: Mapped[str] = mapped_column(String(128), nullable=False)
+details: Mapped[str] = mapped_column(Text, nullable=False)
+⋮----
+class TimeoutBlock(Base)
+⋮----
+__tablename__ = "timeout_blocks"
+⋮----
+device_id: Mapped[str] = mapped_column(String(36), ForeignKey("devices.id"), nullable=False)
+ip: Mapped[str] = mapped_column(String(64), nullable=False)
+until_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
+⋮----
+class AppSetting(Base)
+⋮----
+__tablename__ = "app_settings"
+⋮----
+key: Mapped[str] = mapped_column(String(128), primary_key=True)
+value: Mapped[str] = mapped_column(Text, nullable=False)
+</file>
+
+<file path="app/opnsense_client.py">
+class OPNsenseError(RuntimeError)
+⋮----
+@dataclass(frozen=True)
+class OPNsenseResponse
+⋮----
+status_code: int
+json: dict[str, Any]
+⋮----
+class OPNsenseClient
+⋮----
+def __init__(self) -> None
+⋮----
+def _url(self, path: str) -> str
+⋮----
+path = path.lstrip("/")
+⋮----
+def request(self, method: str, path: str, *, json_body: dict[str, Any] | None = None) -> OPNsenseResponse
+⋮----
+url = self._url(path)
+r = requests.request(
+⋮----
+payload = r.json()
+⋮----
+payload = {"raw": r.text}
+⋮----
+# ---- Firewall alias helpers ----
+def alias_get_uuid_by_name(self, name: str) -> str | None
+⋮----
+r = self.request("GET", f"/api/firewall/alias/getAliasUUID/{name}")
+# OPNsense returns: {"uuid":"..."} or empty
+uuid = r.json.get("uuid")
+⋮----
+def alias_get_item(self, uuid: str) -> dict[str, Any]
+⋮----
+r = self.request("GET", f"/api/firewall/alias/get_item/{uuid}")
+⋮----
+def alias_add_or_replace(self, *, name: str, alias_type: str, content_lines: list[str], description: str = "") -> str
+⋮----
+existing_uuid = self.alias_get_uuid_by_name(name)
+payload = {
+⋮----
+r = self.request("POST", "/api/firewall/alias/add_item", json_body=payload)
+# add_item often returns uuid under `uuid`
+⋮----
+# fallback: look up by name
+uuid2 = self.alias_get_uuid_by_name(name)
+⋮----
+def alias_reconfigure(self) -> None
+⋮----
+def firewall_filter_reconfigure(self) -> dict[str, Any]
+⋮----
+def firewall_toggle_rule(self, uuid: str, enabled: bool) -> dict[str, Any]
+⋮----
+# toggle_rule takes disabled flag, so invert enabled
+disabled = "0" if enabled else "1"
+⋮----
+# ---- Firewall alias_util helpers (incremental updates to runtime table) ----
+def alias_util_list(self, alias_name: str) -> dict[str, Any]
+⋮----
+def alias_util_add(self, alias_name: str, address: str) -> dict[str, Any]
+⋮----
+def alias_util_delete(self, alias_name: str, address: str) -> dict[str, Any]
+⋮----
+def alias_util_flush(self, alias_name: str) -> dict[str, Any]
+⋮----
+# ---- Unbound DNSBL helpers ----
+def unbound_dnsbl_status(self) -> dict[str, Any]
+⋮----
+def unbound_is_blocklist_enabled(self) -> dict[str, Any]
+⋮----
+def unbound_search_dnsbl(self) -> dict[str, Any]
+⋮----
+def unbound_toggle_dnsbl(self, uuid: str, enabled: bool) -> dict[str, Any]
+⋮----
+enabled_param = "1" if enabled else "0"
+⋮----
+def unbound_update_blocklist(self, *, uuid: str, domain: str, list_type: str) -> dict[str, Any]
+⋮----
+"""
+        list_type: 'allowlists' or 'blocklists'
+        """
+⋮----
+def unbound_reconfigure(self) -> dict[str, Any]
+⋮----
+# ---- DHCP / ARP / Traffic (for discovery + usage) ----
+def dhcp_leases4_search(self) -> dict[str, Any]
+⋮----
+# Returns a paginated-like result set; format depends on OPNsense version.
+⋮----
+def diagnostics_get_arp(self) -> dict[str, Any]
+⋮----
+# Prefer snake_case endpoint for newer OPNsense privilege model.
+⋮----
+def diagnostics_traffic_top(self) -> dict[str, Any]
+</file>
+
+<file path="app/scheduler.py">
+@dataclass(frozen=True)
+class BlockDecision
+⋮----
+blocked_ips: set[str]
+reason: str
+⋮----
+def _parse_def(definition_json: str) -> dict
+⋮----
+def _is_now_in_block_window(defn: dict, *, now: datetime) -> bool
+⋮----
+"""
+    Definition format (v1):
+    {
+      "timezone": "Asia/Kolkata",
+      "blocked": [
+        {"days":[0,1,2,3,4], "start":"21:00", "end":"07:00"},
+        {"days":[5,6], "start":"22:00", "end":"08:00"}
+      ]
+    }
+
+    days: 0=Mon ... 6=Sun (Python weekday)
+    Supports overnight windows where end < start.
+    """
+tz = ZoneInfo(defn.get("timezone") or "UTC")
+local_now = now.astimezone(tz)
+wd = local_now.weekday()
+now_t = local_now.time()
+⋮----
+days = set(w.get("days", []))
+⋮----
+start_s = w.get("start", "00:00")
+end_s = w.get("end", "00:00")
+⋮----
+start_t = time(hour=h1, minute=m1)
+end_t = time(hour=h2, minute=m2)
+⋮----
+# treated as "block all day" on selected days
+⋮----
+# overnight window
+⋮----
+def compute_blocked_ips(db: Session, *, now: datetime | None = None) -> BlockDecision
+⋮----
+now = now or datetime.utcnow()
+⋮----
+blocked: set[str] = set()
+⋮----
+schedules = db.scalars(select(Schedule).where(Schedule.enabled == True)).all()  # noqa: E712
+profiles_by_id = {p.id: p for p in db.scalars(select(Profile)).all()}
+devices = db.scalars(select(Device).where(Device.enabled == True)).all()  # noqa: E712
+⋮----
+devices_by_profile: dict[str, list[Device]] = {}
+⋮----
+defn = _parse_def(sch.definition_json)
+⋮----
+profile = profiles_by_id.get(sch.profile_id)
+⋮----
+# Add temporary device timeout blocks.
+timeout_rows = db.scalars(select(TimeoutBlock)).all()
+</file>
+
+<file path="app/security.py">
+bearer = HTTPBearer(auto_error=False)
+⋮----
+def require_admin(creds: HTTPAuthorizationCredentials | None = Depends(bearer)) -> None
+</file>
+
+<file path="app/settings.py">
+class Settings(BaseSettings)
+⋮----
+model_config = SettingsConfigDict(env_file=".env", extra="ignore")
+⋮----
+opnsense_base_url: str
+opnsense_api_key: str
+opnsense_api_secret: str
+opnsense_ca_bundle_path: str | None = None
+opnsense_insecure_skip_verify: bool = False
+⋮----
+admin_token: str
+⋮----
+alias_allowed_ips: str = "PARENT_DASH_ALLOWED_IPS"
+alias_blocked_ips: str = "PARENT_DASH_BLOCKED_IPS"
+alias_site_block_domains: str = "PARENT_DASH_BLOCKED_DOMAINS"
+⋮----
+# Optional: comma-separated UUIDs of DNSBL lists to enable for "family mode"
+family_dnsbl_uuids: str | None = None
+dnsbl_exception_uuid: str | None = None
+⋮----
+# OPNsense Firewall Automation rule UUIDs
+bedtime_rule_uuid: str | None = None
+⋮----
+database_url: str
+⋮----
+settings = Settings()  # type: ignore[call-arg]
+</file>
+
+<file path="app/worker.py">
+def tick() -> None
+⋮----
+db: Session = SessionLocal()
+⋮----
+# Cleanup expired timeout blocks.
+now = datetime.now(timezone.utc)
+expired = [x for x in db.query(TimeoutBlock).all() if x.until_at <= now]
+⋮----
+decision = compute_blocked_ips(db, now=datetime.now(timezone.utc))
+⋮----
+c = OPNsenseClient()
+⋮----
+def main() -> None
+⋮----
+sched = BackgroundScheduler()
+</file>
+
+<file path="Dockerfile">
+FROM python:3.12-slim
+
+WORKDIR /app
+
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1
+
+RUN pip install --no-cache-dir --upgrade pip
+
+COPY requirements.txt /app/requirements.txt
+RUN pip install --no-cache-dir -r /app/requirements.txt
+
+COPY app /app/app
+
+EXPOSE 8080
+
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8080"]
+</file>
+
+<file path="requirements.txt">
+fastapi==0.115.14
+uvicorn[standard]==0.35.0
+pydantic==2.11.4
+pydantic-settings==2.9.1
+requests==2.32.3
+SQLAlchemy==2.0.41
+psycopg[binary]==3.2.9
+alembic==1.16.1
+APScheduler==3.11.0
+</file>
+
+</files>

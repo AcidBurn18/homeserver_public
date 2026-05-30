@@ -1,0 +1,211 @@
+http:
+  routers:
+    abs-http:
+      rule: "Host(`audiobook.home.int`)"
+      entryPoints: ["web"]
+      middlewares: ["redirect-to-https"]
+      service: "abs-svc"
+    abs-https:
+      rule: "Host(`audiobook.home.int`)"
+      entryPoints: ["websecure"]
+      tls: {}
+      middlewares: ["app-chain"]
+      service: "abs-svc"
+
+    jellyfin-http:
+      rule: "Host(`jellyfin.home.int`)"
+      entryPoints: ["web"]
+      middlewares: ["redirect-to-https"]
+      service: "jellyfin-svc"
+    jellyfin-https:
+      rule: "Host(`jellyfin.home.int`)"
+      entryPoints: ["websecure"]
+      tls: {}
+      middlewares: ["media-chain"]
+      service: "jellyfin-svc"
+
+    nextcloud-http:
+      rule: "Host(`nextcloud.home.int`)"
+      entryPoints: ["web"]
+      middlewares: ["redirect-to-https"]
+      service: "nextcloud-svc"
+    nextcloud-https:
+      rule: "Host(`nextcloud.home.int`)"
+      entryPoints: ["websecure"]
+      tls: {}
+      middlewares: ["nextcloud-chain"]
+      service: "nextcloud-svc"
+
+    ha:
+      rule: "Host(`ha.home.int`)"
+      entryPoints: ["websecure"]
+      tls: {}
+      middlewares: ["ha-chain"]
+      service: "ha-svc"
+
+    opn-https:
+      rule: "Host(`opn.home.int`)"
+      entryPoints: ["websecure"]
+      tls: {}
+      service: "opn-svc"
+
+    lenovo-https:
+      rule: "Host(`lenovo.home.int`)"
+      entryPoints: ["websecure"]
+      tls: {}
+      service: "lenovo-svc"
+
+    china-proxmox:
+      rule: "Host(`china.home.int`)"
+      entryPoints: ["websecure"]
+      tls: {}
+      service: "china-svc"
+
+    homepage-http:
+      rule: "Host(`homepage.home.int`)"
+      entryPoints: ["web"]
+      middlewares: ["redirect-to-https"]
+      service: "homepage-svc"
+    homepage-https:
+      rule: "Host(`homepage.home.int`)"
+      entryPoints: ["websecure"]
+      tls: {}
+      middlewares: ["app-chain"]
+      service: "homepage-svc"
+
+    grafana-http:
+      rule: "Host(`grafana.home.int`)"
+      entryPoints: ["web"]
+      middlewares: ["redirect-to-https"]
+      service: "grafana-svc"
+    grafana-https:
+      rule: "Host(`grafana.home.int`)"
+      entryPoints: ["websecure"]
+      tls: {}
+      middlewares: ["app-chain"]
+      service: "grafana-svc"
+
+    prometheus-http:
+      rule: "Host(`prometheus.home.int`)"
+      entryPoints: ["web"]
+      middlewares: ["redirect-to-https"]
+      service: "prometheus-svc"
+    prometheus-https:
+      rule: "Host(`prometheus.home.int`)"
+      entryPoints: ["websecure"]
+      tls: {}
+      middlewares: ["app-chain"]
+      service: "prometheus-svc"
+
+    immich-http:
+      rule: "Host(`photo.home.int`)"
+      entryPoints: ["web"]
+      middlewares: ["redirect-to-https"]
+      service: "immich-svc"
+    immich-https:
+      rule: "Host(`photo.home.int`)"
+      entryPoints: ["websecure"]
+      tls: {}
+      middlewares: ["media-chain"]
+      service: "immich-svc"
+
+    qbittorrent-http:
+      rule: "Host(`torrent.home.int`)"
+      entryPoints: ["web"]
+      middlewares: ["redirect-to-https"]
+      service: "qbittorrent-svc"
+    qbittorrent-https:
+      rule: "Host(`torrent.home.int`)"
+      entryPoints: ["websecure"]
+      tls: {}
+      middlewares: ["media-chain"]
+      service: "qbittorrent-svc"
+
+    paperless-http:
+      rule: "Host(`paperless.home.int`)"
+      entryPoints: ["web"]
+      middlewares: ["redirect-to-https"]
+      service: "paperless-svc"
+    paperless-https:
+      rule: "Host(`paperless.home.int`)"
+      entryPoints: ["websecure"]
+      tls: {}
+      middlewares: ["app-chain"]
+      service: "paperless-svc"
+
+    dns-http:
+      rule: "Host(`dns.home.int`)"
+      entryPoints: ["web"]
+      middlewares: ["redirect-to-https"]
+      service: "dns-svc"
+    dns-https:
+      rule: "Host(`dns.home.int`)"
+      entryPoints: ["websecure"]
+      tls: {}
+      middlewares: ["app-chain"]
+      service: "dns-svc"
+
+  services:
+    abs-svc:
+      loadBalancer:
+        servers:
+          - url: "http://REPLACE_ABS_HOST:13378"
+    jellyfin-svc:
+      loadBalancer:
+        servers:
+          - url: "http://REPLACE_MEDIA_HOST:8096"
+    nextcloud-svc:
+      loadBalancer:
+        passHostHeader: true
+        servers:
+          - url: "http://REPLACE_APPS_HOST:9000"
+    ha-svc:
+      loadBalancer:
+        passHostHeader: true
+        servers:
+          - url: "http://REPLACE_HA_HOST:8123"
+    opn-svc:
+      loadBalancer:
+        serversTransport: insecure-transport@file
+        servers:
+          - url: "https://REPLACE_FIREWALL_HOST:443"
+    lenovo-svc:
+      loadBalancer:
+        serversTransport: insecure-transport@file
+        passHostHeader: true
+        servers:
+          - url: "https://REPLACE_PROXMOX_A_HOST:8006"
+    china-svc:
+      loadBalancer:
+        serversTransport: insecure-transport@file
+        passHostHeader: true
+        servers:
+          - url: "https://REPLACE_PROXMOX_B_HOST:8006"
+    homepage-svc:
+      loadBalancer:
+        servers:
+          - url: "http://REPLACE_DASHBOARD_HOST:3000"
+    grafana-svc:
+      loadBalancer:
+        servers:
+          - url: "http://REPLACE_OBS_HOST:3000"
+    prometheus-svc:
+      loadBalancer:
+        servers:
+          - url: "http://REPLACE_OBS_HOST:9090"
+    immich-svc:
+      loadBalancer:
+        servers:
+          - url: "http://REPLACE_MEDIA_HOST:2283"
+    qbittorrent-svc:
+      loadBalancer:
+        servers:
+          - url: "http://REPLACE_MEDIA_HOST:9091"
+    paperless-svc:
+      loadBalancer:
+        servers:
+          - url: "http://REPLACE_DOCS_HOST:8000"
+    dns-svc:
+      loadBalancer:
+        servers:
+          - url: "http://REPLACE_DNS_HOST:80"
