@@ -82,6 +82,49 @@ docker compose up -d
 docker compose ps
 ```
 
+## Step-CA trust: export and install root CA (laptop + mobile)
+
+Important: this is separate from Traefik server setup.
+Traefik can issue certs, but your clients must trust your Step-CA root CA to avoid browser/app TLS warnings.
+
+1) Export root CA from the running Step-CA container:
+
+```bash
+docker compose cp step-ca:/home/step/certs/root_ca.crt ./certs/root_ca.crt
+```
+
+2) Verify fingerprint (share this with family/team so they can verify they installed the correct cert):
+
+```bash
+openssl x509 -in ./certs/root_ca.crt -noout -fingerprint -sha256
+```
+
+3) Install on laptop (macOS):
+
+```bash
+sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain ./certs/root_ca.crt
+```
+
+4) Install on mobile:
+
+- iPhone/iPad (iOS):
+  - Send `root_ca.crt` to phone (AirDrop/email/files)
+  - Open file -> install profile
+  - Then go to: Settings -> General -> About -> Certificate Trust Settings
+  - Enable full trust for that root certificate
+- Android:
+  - Install CA cert from security settings (path varies by vendor)
+  - Note: many apps ignore user-installed CAs by design; browsers usually work, some apps may still fail
+
+5) Client verification:
+
+```bash
+curl -v https://nextcloud.home.int
+openssl s_client -connect nextcloud.home.int:443 -servername nextcloud.home.int </dev/null | grep -E "issuer=|Verify return code"
+```
+
+You should see successful TLS verification (`Verify return code: 0 (ok)`).
+
 ## Post-deploy verification
 
 Check DNS resolution for one app:
