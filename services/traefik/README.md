@@ -1,7 +1,7 @@
 # Traefik homelab setup (sanitized, production-style)
 
 This folder contains a practical Traefik setup you can run on your own server.
-It is based on a real homelab deployment, with sensitive values removed.
+It is based on a real homelab deployment.
 
 Use this as a template, not a drop-in file.
 
