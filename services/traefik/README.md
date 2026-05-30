@@ -35,6 +35,30 @@ Use this as a template, not a drop-in file.
 - `dynamic/99-fallback.yml`
   - Low-priority fallback router
 
+## docker-compose.yaml explained (quick)
+
+This compose runs 3 containers:
+
+- `step-ca` (private CA)
+  - Issues internal certificates for your homelab.
+  - ACME is enabled (`DOCKER_STEPCA_INIT_ACME=true`) so Traefik can request certs automatically.
+  - Uses `step_ca` volume so CA state persists across restarts.
+
+- `traefik` (reverse proxy)
+  - Exposes `80` (HTTP), `443` (HTTPS), `9100` (Prometheus metrics), and dashboard via `8090`.
+  - Loads dynamic routers/services/middlewares from `./dynamic`.
+  - Writes JSON access logs to `./logs/access.log`.
+  - Mounts `step_ca` volume read-only so it can trust/use Step-CA cert material when needed.
+
+- `fallback-site` (default page)
+  - Simple Nginx static page for unmatched hosts.
+
+Why this split is useful:
+- clean routing in `dynamic/*.yml`
+- persistent internal CA
+- built-in observability (logs + metrics)
+- safe fallback behavior for unknown subdomains
+
 ## Prerequisites
 
 - Docker Engine + Docker Compose plugin
