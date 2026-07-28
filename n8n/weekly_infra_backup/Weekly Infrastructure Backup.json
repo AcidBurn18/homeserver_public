@@ -10,13 +10,9 @@
       },
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2.1,
-      "position": [
-        -288,
-        0
-      ],
+      "position": [-288, 0],
       "id": "67a3ea24-f027-45d3-9ed4-87616c47d009",
-      "name": "Webhook",
-      "webhookId": "04c6bed6-f86b-4173-907b-71f810d93ae5"
+      "name": "Webhook"
     },
     {
       "parameters": {
@@ -44,10 +40,7 @@
       },
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.3,
-      "position": [
-        208,
-        32
-      ],
+      "position": [208, 32],
       "id": "f2518a40-b563-4b28-974b-bbb184456b79",
       "name": "If"
     },
@@ -57,10 +50,7 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [
-        432,
-        96
-      ],
+      "position": [432, 96],
       "id": "fcc57b8d-a1f9-414e-992d-c142d424fe43",
       "name": "Build Success"
     },
@@ -70,23 +60,17 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [
-        432,
-        -96
-      ],
+      "position": [432, -96],
       "id": "095fa7c5-4270-4044-b27a-278a9b61e342",
       "name": "Build Failure"
     },
     {
       "parameters": {
-        "jsCode": "const body = $json.body;\nconst log = body.message || \"\";\n\nconst guests = [];\n\n// Find the summary table\nconst tableMatch = log.match(/VMID[\\s\\S]*?Filename[\\s\\S]*?\\n([\\s\\S]*?)\\n\\nTotal running time:/);\n\nif (tableMatch) {\n\n    const rows = tableMatch[1].trim().split(\"\\n\");\n\n    for (const row of rows) {\n\n        const m = row.match(/^(\\d+)\\s+(.+?)\\s+(ok|error|failed|warning)\\s+(.+?)\\s+([0-9.]+\\s(?:MiB|GiB|TiB))/);\n\n        if (m) {\n\n            guests.push({\n                vmid: m[1],\n                name: m[2].trim(),\n                status: m[3],\n                duration: m[4].trim(),\n                size: m[5]\n            });\n\n        }\n\n    }\n\n}\n\nconst pruned =\n    log.match(/pruned (\\d+) backup/)?.[1] ?? \"0\";\n\nreturn [{\n    hostname: body.fields.hostname,\n    severity: body.severity,\n    title: body.title,\n    message: body.message,\n    timestamp: body.timestamp,\n    guests,\n    guestCount: guests.length,\n    pruned\n}];"
+        "jsCode": "const body=$json.body;\nconst log=body.message||\"\";\nconst guests=[];\nconst tableMatch=log.match(/VMID[\\s\\S]*?Filename[\\s\\S]*?\\n([\\s\\S]*?)\\n\\nTotal running time:/);\nif(tableMatch){\nconst rows=tableMatch[1].trim().split(\"\\n\");\nfor(const row of rows){\nconst m=row.match(/^(\\d+)\\s+(.+?)\\s+(ok|error|failed|warning)\\s+(.+?)\\s+([0-9.]+\\s(?:MiB|GiB|TiB))/);\nif(m){\nguests.push({\nvmid:m[1],\nname:m[2].trim(),\nstatus:m[3],\nduration:m[4].trim(),\nsize:m[5]\n});\n}\n}\n}\nconst pruned=log.match(/pruned (\\d+) backup/)?.[1]??\"0\";\nreturn [{\nhostname:body.fields.hostname,\nseverity:body.severity,\ntitle:body.title,\nmessage:body.message,\ntimestamp:body.timestamp,\nguests,\nguestCount:guests.length,\npruned\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [
-        64,
-        160
-      ],
+      "position": [64, 160],
       "id": "9afcd072-5dea-418b-a012-c5991ff625e0",
       "name": "Parser"
     },
@@ -116,34 +100,21 @@
       },
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.3,
-      "position": [
-        -128,
-        0
-      ],
+      "position": [-128, 0],
       "id": "377f6d54-81b7-46f9-8900-0c29aabca55e",
       "name": "Promomx/Container"
     },
     {
       "parameters": {
-        "chatId": "603394888",
+        "chatId": "YOUR_TELEGRAM_CHAT_ID",
         "text": "=🖥️ Proxmox Host Backup\n\nHost: {{$json.body.hostname}}\n\nStatus: {{ $json.body.status == \"success\" ? \"✅ Success\" : \"❌ Failed\" }}\n\nArchive: {{$json.body.size}}\n\nBackup Date: {{$json.body.backup_date}}\n\nBackup Time: {{$json.body.backup_time}}\n\nVersion: {{$json.body.script_version}}",
         "additionalFields": {}
       },
       "type": "n8n-nodes-base.telegram",
       "typeVersion": 1.2,
-      "position": [
-        64,
-        -160
-      ],
+      "position": [64, -160],
       "id": "ee0b4748-cb00-4964-9330-ba00d58de61f",
-      "name": "Promox Host Backup Message",
-      "webhookId": "c06ce8f0-626b-40aa-b203-4f970b542ef2",
-      "credentials": {
-        "telegramApi": {
-          "id": "sSh6p4YMhopSuElc",
-          "name": "Telegram account"
-        }
-      }
+      "name": "Promox Host Backup Message"
     },
     {
       "parameters": {
@@ -156,10 +127,7 @@
       },
       "type": "n8n-nodes-base.respondToWebhook",
       "typeVersion": 1.5,
-      "position": [
-        256,
-        -160
-      ],
+      "position": [256, -160],
       "id": "c68c1387-ba6d-4c1a-8f2b-3157b64bf891",
       "name": "Promox Host Backup"
     },
@@ -174,16 +142,13 @@
       },
       "type": "n8n-nodes-base.respondToWebhook",
       "typeVersion": 1.5,
-      "position": [
-        800,
-        0
-      ],
+      "position": [800, 0],
       "id": "3544c6b4-9145-46e2-b5bd-89e22c024668",
       "name": "Proxmox Container Backup"
     },
     {
       "parameters": {
-        "chatId": "603394888",
+        "chatId": "YOUR_TELEGRAM_CHAT_ID",
         "text": "={{$json.telegramMessage}}",
         "additionalFields": {
           "parse_mode": "Markdown"
@@ -191,19 +156,9 @@
       },
       "type": "n8n-nodes-base.telegram",
       "typeVersion": 1.2,
-      "position": [
-        624,
-        -32
-      ],
+      "position": [624, -32],
       "id": "5890f806-1c47-41cd-885e-4d0db157958b",
-      "name": "Proxmox Container Backup Message",
-      "webhookId": "c06ce8f0-626b-40aa-b203-4f970b542ef2",
-      "credentials": {
-        "telegramApi": {
-          "id": "sSh6p4YMhopSuElc",
-          "name": "Telegram account"
-        }
-      }
+      "name": "Proxmox Container Backup Message"
     }
   ],
   "pinData": {},
@@ -311,15 +266,10 @@
       ]
     }
   },
-  "active": true,
+  "active": false,
   "settings": {
     "executionOrder": "v1",
     "binaryMode": "separate"
   },
-  "versionId": "fbdfe05b-1c3c-4a35-a17f-26ca3defc8e5",
-  "meta": {
-    "instanceId": "c52957262e85da0d33722c759f8c40cf361149de798c665fe12b7fca02ae454f"
-  },
-  "id": "vTbA24n30ZcJg9Q0",
   "tags": []
 }
