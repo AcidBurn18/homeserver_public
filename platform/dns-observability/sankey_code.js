@@ -1,5 +1,7 @@
 const frames = context.panel.data.series || [];
 
+/// SANKEY CODE ////////
+
 function readFieldValue(field) {
   if (!field || !field.values) return 0;
 

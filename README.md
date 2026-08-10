@@ -166,28 +166,6 @@ This repository is part of my public engineering profile. I maintain it to show 
 I also write technical articles that connect to this kind of work on Medium:
 https://teckdebate.medium.com
 
-## Suggested Screenshots To Add
-
-To make this project even stronger as a portfolio piece, the next useful additions would be:
-
-- Portainer dashboard screenshot
-- Uptime Kuma status page screenshot
-- Jellyfin or Nextcloud service UI screenshot
-- one network or architecture diagram exported as PNG/SVG
-
-If added later, place them under a `docs/images/` folder and reference them from this README.
-
-## Security And Privacy
-
-This is a sanitized public repository. Sensitive values, secrets, hostnames, and internal network details have been removed, replaced, or generalized.
-
-## Future Improvements
-
-- Add CI checks for YAML and manifest quality
-- Add architecture images under `docs/images/`
-- Add per-service documentation for setup decisions and storage mapping
-- Expand observability with metrics and centralized logging
-- Add deployment notes and operational runbooks
 
 ## Disclaimer
 
