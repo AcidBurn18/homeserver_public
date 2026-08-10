@@ -1,5 +1,4 @@
-// Add any sanitized code or templates you want to provide in this space for users to reuse
-// Ensure that all shared code is well-documented and easy to follow.
+const frames = context.panel.data.series || [];
 
 function readFieldValue(field) {
   if (!field || !field.values) return 0;
