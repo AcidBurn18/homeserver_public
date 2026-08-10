@@ -14,7 +14,7 @@ This repository provides the necessary components and configuration files to set
 ### Directory Structure
 The following files are included:
 - `queries.md`: Contains LogQL and PromQL query templates to extract data from AdGuard and Unbound logs.
-- `code.js`: JavaScript code used for transformations in the Grafana Sankey panel.
+- `sankey_code.js`: JavaScript code used for transformations in the Grafana Sankey panel.
 - `image.png`: Sample image of the Grafana dashboard for visualization reference.
 
 ### Setup Instructions
@@ -23,7 +23,7 @@ The following files are included:
    git clone <repository-url>
    ```
 2. Follow the instructions in `queries.md` to set up the necessary queries in Grafana and Prometheus.
-3. Implement the JavaScript code from `code.js` in your Grafana dashboard.
+3. Implement the JavaScript code from `sankey_code.js` in your Grafana dashboard.
 4. Use the sample image in `image.png` as a visual reference while building your dashboard.
 
 ### Usage
