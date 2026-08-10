@@ -13,7 +13,6 @@ This repository provides the necessary components and configuration files to set
 
 ### Directory Structure
 The following files are included:
-- `dns-grafana-medium-draft.md`: Draft article explaining the DNS flow and observability.
 - `queries.md`: Contains LogQL and PromQL query templates to extract data from AdGuard and Unbound logs.
 - `code.js`: JavaScript code used for transformations in the Grafana Sankey panel.
 - `image.png`: Sample image of the Grafana dashboard for visualization reference.
