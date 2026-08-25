@@ -1,0 +1,31 @@
+- switch:
+    - name: "Main Server"
+      unique_id: main_server_power
+
+      state: >
+        {{ is_state(
+          'binary_sensor.main_server',
+          'on'
+        ) }}
+
+      turn_on:
+        - action: rest_command.wake_mainserver
+
+      turn_off:
+        - action: shell_command.poweroff_mainserver
+
+- switch:
+    - name: "HP Node 01"
+      unique_id: hp_node01_power
+
+      state: >
+        {{ is_state(
+          'binary_sensor.hpnode01',
+          'on'
+        ) }}
+
+      turn_on:
+        - action: rest_command.wake_hpnode01
+
+      turn_off:
+        - action: shell_command.poweroff_hpnode01

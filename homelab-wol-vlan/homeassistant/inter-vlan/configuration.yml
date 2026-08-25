@@ -1,0 +1,20 @@
+template: !include template.yaml
+
+
+shell_command:
+  poweroff_mainserver: ssh -i /config/.ssh/id_edxxxx  -o StrictHostKeyChecking=no  username@<SERVER-IP> sudo poweroff
+
+
+rest_command:
+  wake_main_server:
+    url: "https://<OPNSENSE-MGMT-IP>/api/wol/wol/set"
+    method: POST
+    username: !secret opnsense_api_key
+    password: !secret opnsense_api_secret
+    verify_ssl: false
+    content_type: "application/json"
+    payload: '{"uuid":""}'
+
+
+
+

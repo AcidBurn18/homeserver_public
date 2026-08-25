@@ -1,0 +1,12 @@
+shell_command:
+  poweroff_mainserver: ssh -i /config/.ssh/id_edxxxx -o StrictHostKeyChecking=no  username@<SERVER-IP> sudo poweroff
+
+
+switch:
+  - platform: wake_on_lan
+    name: "Main Server"
+    mac: "xx:xx:xx:xx:xx:xx"
+    broadcast_address: <BROADCAST-IP>
+    host: <SERVER-IP>    # used to poll actual on/off state via ping
+    turn_off:
+      service: shell_command.poweroff_mainserver
