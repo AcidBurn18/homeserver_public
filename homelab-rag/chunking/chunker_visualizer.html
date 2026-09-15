@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homelab RAG - Interactive Chunker Visualizer</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1e1e2e;
+            color: #cdd6f4;
+            margin: 0;
+            padding: 20px;
+        }
+        h1, h2, h3 { color: #89b4fa; }
+        .container {
+            display: flex;
+            gap: 20px;
+        }
+        .column {
+            flex: 1;
+            background: #181825;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            max-height: 85vh;
+            overflow-y: auto;
+        }
+        .card {
+            background: #313244;
+            margin-bottom: 12px;
+            padding: 12px;
+            border-radius: 6px;
+            border-left: 5px solid #89b4fa;
+        }
+        .type-paragraph { border-color: #89b4fa; }
+        .type-code { border-color: #cba6f7; }
+        .type-table { border-color: #94e2d5; }
+        .type-list { border-color: #fab387; }
+        
+        .badge {
+            display: inline-block;
+            padding: 3px 8px;
+            font-size: 11px;
+            font-weight: bold;
+            border-radius: 4px;
+            background: #45475a;
+            color: #f5e0dc;
+            margin-right: 5px;
+        }
+        .tag-section { background: #f38ba8; color: #11111b; }
+        .tag-tokens { background: #a6e3a1; color: #11111b; }
+        pre {
+            background: #11111b;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            font-size: 12px;
+            color: #a6adc8;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>⚡ Homelab RAG Backend Chunker Visualizer</h1>
+    <p>Visualizing the 4-Stage State Machine, Block Classification, and Greedy Section-Isolated Packing</p>
+
+    <div class="container">
+        
+        <!-- COLUMN 1: PARSED BLOCKS -->
+        <div class="column">
+            <h2>Stage 1 & 2: Parsed Semantic Blocks (9)</h2>
+            <div id="blocks-container"></div>
+        </div>
+
+        <!-- COLUMN 2: FINAL PACKED CHUNKS -->
+        <div class="column">
+            <h2>Stage 3 & 4: Final Packed Chunks (3)</h2>
+            <div id="chunks-container"></div>
+        </div>
+
+    </div>
+
+    <script>
+        const blocks = [{"type": "paragraph", "section": "Homelab Physical & Virtual Infrastructure", "text": "Cmd:- lspci -nnk | grep -A4 -Ei 'Ethernet controller|Network controller'", "tokens": 13}, {"type": "paragraph", "section": "Homelab Physical & Virtual Infrastructure", "text": "Proxmox1 contains four Intel I226-V Ethernet controllers. Two controllers ( 01:00.0 and 04:00.0 ) are managed by the Linux igc driver and appear to Proxmox as host network interfaces. The remaining two controllers ( 02:00.0 and 03:00.0 ) are bound to vfio-pci, indicating that they are reserved for PCI passthrough to a virtual machine.", "tokens": 70}, {"type": "paragraph", "section": "Homelab Physical & Virtual Infrastructure", "text": "Physical Port 1 is currently unused and corresponds to the host-controlled NIC represented by enp1s0; its physical link is currently down ( NO-CARRIER ).", "tokens": 31}, {"type": "paragraph", "section": "Homelab Physical & Virtual Infrastructure", "text": "Physical Port 2 is connected to the Airtel router and its corresponding NIC is passed through to OPNsense rather than being exposed as a normal Proxmox Linux interface.", "tokens": 36}, {"type": "paragraph", "section": "Homelab Physical & Virtual Infrastructure", "text": "Physical Port 3 is currently unused and its NIC is also configured for PCI passthrough.", "tokens": 19}, {"type": "paragraph", "section": "Homelab Physical & Virtual Infrastructure", "text": "Physical Port 4 is connected to the managed switch. Its NIC is represented by enp4s0 and is attached to the VLAN-aware Linux bridge vmbr1. Proxmox itself accesses VLAN 10 through the vmbr1.10 interface with address 10.27.10.3/24.", "tokens": 46}, {"type": "paragraph", "section": "Homelab Physical & Virtual Infrastructure > Port Interface Matrix", "text": "Proxmox1 has four Intel I226-V physical Ethernet ports:", "tokens": 10}, {"type": "table", "section": "Homelab Physical & Virtual Infrastructure > Port Interface Matrix", "text": "| Physical Port | PCI Device | Proxmox Driver | Linux Interface | Connection |\n|---|---|---|---|---|\n| Port 1 | 01:00.0 | igc | enp1s0 | Empty |\n| Port 2 | 02:00.0 | vfio-pci | Passed through | Airtel Router |\n| Port 3 | 03:00.0 | vfio-pci | Passed through | Empty |\n| Port 4 | 04:00.0 | igc | enp4s0 | Managed Switch |", "tokens": 88}, {"type": "code", "section": "Homelab Physical & Virtual Infrastructure > Shell Execution Commands", "text": "```bash\n# Verify PCI passthrough status\nlspci -nnk -d 8086:15f2\n```", "tokens": 14}];
+        const chunks = [{"id": 0, "section": "Homelab Physical & Virtual Infrastructure", "types": ["paragraph"], "tokens": 217, "text": "Cmd:- lspci -nnk | grep -A4 -Ei 'Ethernet controller|Network controller'\n\nProxmox1 contains four Intel I226-V Ethernet controllers. Two controllers ( 01:00.0 and 04:00.0 ) are managed by the Linux igc driver and appear to Proxmox as host network interfaces. The remaining two controllers ( 02:00.0 and 03:00.0 ) are bound to vfio-pci, indicating that they are reserved for PCI passthrough to a virtual machine.\n\nPhysical Port 1 is currently unused and corresponds to the host-controlled NIC represented by enp1s0; its physical link is currently down ( NO-CARRIER ).\n\nPhysical Port 2 is connected to the Airtel router and its corresponding NIC is passed through to OPNsense rather than being exposed as a normal Proxmox Linux interface.\n\nPhysical Port 3 is currently unused and its NIC is also configured for PCI passthrough.\n\nPhysical Port 4 is connected to the managed switch. Its NIC is represented by enp4s0 and is attached to the VLAN-aware Linux bridge vmbr1. Proxmox itself accesses VLAN 10 through the vmbr1.10 interface with address 10.27.10.3/24."}, {"id": 1, "section": "Homelab Physical & Virtual Infrastructure > Port Interface Matrix", "types": ["paragraph", "table"], "tokens": 98, "text": "Proxmox1 has four Intel I226-V physical Ethernet ports:\n\n| Physical Port | PCI Device | Proxmox Driver | Linux Interface | Connection |\n|---|---|---|---|---|\n| Port 1 | 01:00.0 | igc | enp1s0 | Empty |\n| Port 2 | 02:00.0 | vfio-pci | Passed through | Airtel Router |\n| Port 3 | 03:00.0 | vfio-pci | Passed through | Empty |\n| Port 4 | 04:00.0 | igc | enp4s0 | Managed Switch |"}, {"id": 2, "section": "Homelab Physical & Virtual Infrastructure > Shell Execution Commands", "types": ["code"], "tokens": 14, "text": "```bash\n# Verify PCI passthrough status\nlspci -nnk -d 8086:15f2\n```"}];
+
+        const blocksDiv = document.getElementById('blocks-container');
+        blocks.forEach((b, i) => {
+            const card = document.createElement('div');
+            card.className = `card type-${b.type}`;
+            card.innerHTML = `
+                <div>
+                    <span class="badge">Block #${i+1}</span>
+                    <span class="badge" style="background:#89b4fa; color:#11111b">${b.type.toUpperCase()}</span>
+                    <span class="badge tag-tokens">${b.tokens} Tokens</span>
+                </div>
+                <div style="margin-top:6px;"><span class="badge tag-section">Section: ${b.section}</span></div>
+                <pre>${b.text.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</pre>
+            `;
+            blocksDiv.appendChild(card);
+        });
+
+        const chunksDiv = document.getElementById('chunks-container');
+        chunks.forEach((c) => {
+            const card = document.createElement('div');
+            card.className = `card`;
+            card.style.borderColor = "#a6e3a1";
+            card.innerHTML = `
+                <div>
+                    <span class="badge" style="background:#a6e3a1; color:#11111b">Chunk #${c.id+1}</span>
+                    <span class="badge tag-tokens">${c.tokens} Approx Tokens</span>
+                    <span class="badge" style="background:#f9e2af; color:#11111b">Types: ${c.types.join(", ")}</span>
+                </div>
+                <div style="margin-top:6px;"><span class="badge tag-section">Header Lineage: ${c.section}</span></div>
+                <pre>${c.text.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</pre>
+            `;
+            chunksDiv.appendChild(card);
+        });
+    </script>
+</body>
+</html>
