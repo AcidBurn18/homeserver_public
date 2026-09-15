@@ -1,0 +1,209 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 850px;
+                 background-color: #070a12;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+      body { font-family: 'Inter', sans-serif; background-color: #070a12 !important; margin: 0; overflow: hidden; }
+      .ui-header {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        background: rgba(15, 23, 42, 0.85);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        padding: 18px 24px;
+        border-radius: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        color: #ffffff;
+        z-index: 1000;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+        max-width: 320px;
+      }
+      .ui-title {
+        margin: 0 0 6px 0;
+        font-size: 16px;
+        font-weight: 800;
+        background: linear-gradient(135deg, #38bdf8, #818cf8);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        letter-spacing: 0.5px;
+      }
+      .ui-subtitle {
+        margin: 0 0 14px 0;
+        font-size: 12px;
+        color: #94a3b8;
+        font-weight: 500;
+      }
+      .legend-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        font-size: 12px;
+        font-weight: 600;
+      }
+      .legend-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #e2e8f0;
+      }
+      .legend-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 4px;
+        flex-shrink: 0;
+      }
+    </style>
+
+    <div class="ui-header">
+        <h3 class="ui-title">⚡ HOMELAB TOPOLOGY</h3>
+        <p class="ui-subtitle">Multimodal RAG Architecture & Infrastructure Graph</p>
+        <div class="legend-grid">
+            <div class="legend-item"><span class="legend-dot" style="background:#38bdf8; box-shadow:0 0 8px #38bdf8;"></span>WAN Router</div>
+            <div class="legend-item"><span class="legend-dot" style="background:#818cf8; box-shadow:0 0 8px #818cf8;"></span>OPNsense</div>
+            <div class="legend-item"><span class="legend-dot" style="background:#34d399; box-shadow:0 0 8px #34d399;"></span>Proxmox PVE</div>
+            <div class="legend-item"><span class="legend-dot" style="background:#c084fc; box-shadow:0 0 8px #c084fc;"></span>Switch</div>
+            <div class="legend-item"><span class="legend-dot" style="background:#fbbf24; box-shadow:0 0 8px #fbbf24;"></span>Bridges</div>
+            <div class="legend-item"><span class="legend-dot" style="background:#f472b6; box-shadow:0 0 8px #f472b6;"></span>Docker Containers</div>
+        </div>
+    </div>
+    
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"borderWidth": 3, "color": {"background": "#0c2a38", "border": "#38bdf8", "highlight": {"background": "#1e293b", "border": "#ffffff"}, "hover": {"background": "#0c2a38", "border": "#ffffff"}}, "font": {"color": "#ffffff"}, "id": "Airtel_Router", "label": "\ud83c\udf10 Airtel WAN Router\n192.168.1.1", "shape": "box", "size": 42, "x": 120, "y": -270}, {"borderWidth": 3, "color": {"background": "#1e1b4b", "border": "#818cf8", "highlight": {"background": "#1e293b", "border": "#ffffff"}, "hover": {"background": "#1e1b4b", "border": "#ffffff"}}, "font": {"color": "#ffffff"}, "id": "OPNsense", "label": "\ud83d\udee1\ufe0f OPNsense Firewall\n10.27.10.1 (VM 101)", "shape": "box", "size": 46, "x": 120, "y": -100}, {"borderWidth": 3, "color": {"background": "#451a03", "border": "#fbbf24", "highlight": {"background": "#1e293b", "border": "#ffffff"}, "hover": {"background": "#451a03", "border": "#ffffff"}}, "font": {"color": "#ffffff"}, "id": "vmbr1", "label": "\u26a1 Bridge vmbr1\nWAN Passthrough", "shape": "box", "size": 36, "x": -180, "y": -100}, {"borderWidth": 3, "color": {"background": "#451a03", "border": "#fbbf24", "highlight": {"background": "#1e293b", "border": "#ffffff"}, "hover": {"background": "#451a03", "border": "#ffffff"}}, "font": {"color": "#ffffff"}, "id": "vmbr0", "label": "\u26a1 Bridge vmbr0\nLAN (10.27.10.0/24)", "shape": "box", "size": 36, "x": 420, "y": -100}, {"borderWidth": 3, "color": {"background": "#3b0764", "border": "#c084fc", "highlight": {"background": "#1e293b", "border": "#ffffff"}, "hover": {"background": "#3b0764", "border": "#ffffff"}}, "font": {"color": "#ffffff"}, "id": "Managed_Switch", "label": "\ud83d\udd00 Managed Switch\nVLAN 10/20", "shape": "box", "size": 38, "x": -180, "y": 80}, {"borderWidth": 3, "color": {"background": "#0c2a38", "border": "#38bdf8", "highlight": {"background": "#1e293b", "border": "#ffffff"}, "hover": {"background": "#0c2a38", "border": "#ffffff"}}, "font": {"color": "#ffffff"}, "id": "Jio_AP", "label": "\ud83d\udce1 Jio OpenWrt AP\n10.27.10.2", "shape": "box", "size": 42, "x": -180, "y": 250}, {"borderWidth": 3, "color": {"background": "#064e3b", "border": "#34d399", "highlight": {"background": "#1e293b", "border": "#ffffff"}, "hover": {"background": "#064e3b", "border": "#ffffff"}}, "font": {"color": "#ffffff"}, "id": "Proxmox_Host", "label": "\ud83d\udda5\ufe0f Proxmox Host 1\n10.27.10.3 (PVE)", "shape": "box", "size": 50, "x": 320, "y": 80}, {"borderWidth": 2, "color": {"background": "#4c0519", "border": "#f472b6", "highlight": {"background": "#831843", "border": "#ffffff"}}, "font": {"color": "#ffffff"}, "id": "docker_jellyfin", "label": "\ud83d\udc33 Jellyfin\nDocker Container", "shape": "box", "size": 34, "x": 200, "y": 260}]);
+                  edges = new vis.DataSet([{"arrows": {"to": {"enabled": true, "scaleFactor": 0.8}}, "color": {"color": "#38bdf8", "highlight": "#60a5fa"}, "font": {"background": "#0f172a", "color": "#cbd5e1", "face": "Inter, sans-serif", "size": 13, "strokeWidth": 0}, "from": "Airtel_Router", "label": "Port 2 Passthrough", "to": "OPNsense", "width": 3}, {"arrows": {"to": {"enabled": true, "scaleFactor": 0.8}}, "color": {"color": "#38bdf8", "highlight": "#60a5fa"}, "font": {"background": "#0f172a", "color": "#cbd5e1", "face": "Inter, sans-serif", "size": 13, "strokeWidth": 0}, "from": "OPNsense", "label": "VirtIO WAN", "to": "vmbr1", "width": 3}, {"arrows": {"to": {"enabled": true, "scaleFactor": 0.8}}, "color": {"color": "#38bdf8", "highlight": "#60a5fa"}, "font": {"background": "#0f172a", "color": "#cbd5e1", "face": "Inter, sans-serif", "size": 13, "strokeWidth": 0}, "from": "OPNsense", "label": "VirtIO LAN", "to": "vmbr0", "width": 3}, {"arrows": {"to": {"enabled": true, "scaleFactor": 0.8}}, "color": {"color": "#38bdf8", "highlight": "#60a5fa"}, "font": {"background": "#0f172a", "color": "#cbd5e1", "face": "Inter, sans-serif", "size": 13, "strokeWidth": 0}, "from": "Proxmox_Host", "label": "Management IP", "to": "vmbr0", "width": 3}, {"arrows": {"to": {"enabled": true, "scaleFactor": 0.8}}, "color": {"color": "#38bdf8", "highlight": "#60a5fa"}, "font": {"background": "#0f172a", "color": "#cbd5e1", "face": "Inter, sans-serif", "size": 13, "strokeWidth": 0}, "from": "OPNsense", "label": "Trunk Port 4", "to": "Managed_Switch", "width": 3}, {"arrows": {"to": {"enabled": true, "scaleFactor": 0.8}}, "color": {"color": "#38bdf8", "highlight": "#60a5fa"}, "font": {"background": "#0f172a", "color": "#cbd5e1", "face": "Inter, sans-serif", "size": 13, "strokeWidth": 0}, "from": "Managed_Switch", "label": "AP Connection", "to": "Jio_AP", "width": 3}, {"arrows": {"to": {"enabled": true, "scaleFactor": 0.6}}, "color": {"color": "#f472b6"}, "font": {"background": "#0f172a", "color": "#f472b6", "size": 12, "strokeWidth": 0}, "from": "Proxmox_Host", "label": "Host Link", "to": "docker_jellyfin", "width": 2}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {"nodes": {"borderWidth": 3, "borderWidthSelected": 4, "shadow": {"enabled": true, "color": "rgba(0,0,0,0.65)", "size": 16, "x": 0, "y": 8}, "shapeProperties": {"borderRadius": 12}, "margin": 18}, "edges": {"width": 3, "selectionWidth": 4, "shadow": {"enabled": true, "color": "rgba(56,189,248,0.25)", "size": 8}, "smooth": {"type": "cubicBezier", "forceDirection": "none", "roundness": 0.4}}, "physics": {"solver": "forceAtlas2Based", "forceAtlas2Based": {"gravitationalConstant": -60, "centralGravity": 0.005, "springLength": 140, "springConstant": 0.06, "damping": 0.2}, "minVelocity": 0.75}, "interaction": {"hover": true, "zoomView": true}};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    
+    <script type="text/javascript">
+      window.addEventListener("load", function() {
+        if (typeof network !== "undefined") {
+          setTimeout(function() {
+            network.fit({
+              nodes: ["Airtel_Router", "OPNsense", "vmbr1", "vmbr0", "Managed_Switch", "Jio_AP", "Proxmox_Host", "docker_jellyfin", "docker_grafana"],
+              animation: { duration: 800, easingFunction: "easeInOutQuad" }
+            });
+          }, 800);
+        }
+      });
+    </script>
+    
+</body>
+</html>
