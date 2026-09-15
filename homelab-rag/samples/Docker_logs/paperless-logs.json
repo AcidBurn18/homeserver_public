@@ -1,1 +1,1952 @@
-[{"line":"[2026-09-14 14:05:03,209] [INFO] [celery.app.trace] Task documents.tasks.train_classifier[f4abf29f-8397-45eb-be49-1c7932e804f0] succeeded in 3.0755382630741224s: None","timestamp":"1789374903209372252","date":"2026-09-14T08:35:03.209Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 14:05:02,854] [INFO] [paperless.classifier] No updates since last training","timestamp":"1789374902854733558","date":"2026-09-14T08:35:02.854Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 14:05:00,798] [INFO] [celery.app.trace] Task documents.tasks.check_scheduled_workflows[f9b69864-292c-4320-b4ca-f165cdefef0b] succeeded in 0.6650895599741489s: None","timestamp":"1789374900799227542","date":"2026-09-14T08:35:00.799Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 14:05:00,132] [INFO] [celery.worker.strategy] Task documents.tasks.check_scheduled_workflows[f9b69864-292c-4320-b4ca-f165cdefef0b] received","timestamp":"1789374900132985221","date":"2026-09-14T08:35:00.132Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 14:05:00,130] [INFO] [celery.worker.strategy] Task documents.tasks.train_classifier[f4abf29f-8397-45eb-be49-1c7932e804f0] received","timestamp":"1789374900131032148","date":"2026-09-14T08:35:00.131Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 14:05:00,127] [INFO] [celery.beat] Scheduler: Sending due task Check and run scheduled workflows (documents.tasks.check_scheduled_workflows)","timestamp":"1789374900131007534","date":"2026-09-14T08:35:00.131Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 14:05:00,124] [INFO] [celery.beat] Scheduler: Sending due task Train the classifier (documents.tasks.train_classifier)","timestamp":"1789374900124842352","date":"2026-09-14T08:35:00.124Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 14:00:00,384] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[ea3ada2e-3b38-4365-805c-63024df3bc40] succeeded in 0.33895179396495223s: 'No new documents were added.'","timestamp":"1789374600384535107","date":"2026-09-14T08:30:00.384Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 14:00:00,043] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[ea3ada2e-3b38-4365-805c-63024df3bc40] received","timestamp":"1789374600043811217","date":"2026-09-14T08:30:00.043Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 14:00:00,040] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)","timestamp":"1789374600040734264","date":"2026-09-14T08:30:00.040Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 13:50:01,049] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[2c12bed5-df23-4455-ad91-f411fdefa865] succeeded in 0.45259570400230587s: 'No new documents were added.'","timestamp":"1789374001049730285","date":"2026-09-14T08:20:01.049Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 13:50:00,594] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[2c12bed5-df23-4455-ad91-f411fdefa865] received","timestamp":"1789374000595369072","date":"2026-09-14T08:20:00.595Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 13:50:00,591] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)","timestamp":"1789374000592614887","date":"2026-09-14T08:20:00.592Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 13:40:00,442] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[d532550e-f7e4-4f64-8d10-c79be60ec01d] succeeded in 0.3440809400053695s: 'No new documents were added.'","timestamp":"1789373400443947758","date":"2026-09-14T08:10:00.443Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 13:40:00,096] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[d532550e-f7e4-4f64-8d10-c79be60ec01d] received","timestamp":"1789373400097001522","date":"2026-09-14T08:10:00.097Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 13:40:00,093] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)","timestamp":"1789373400094232877","date":"2026-09-14T08:10:00.094Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 13:30:00,458] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[11102e64-ff4b-4f31-ab42-17af25b5dd03] succeeded in 0.394872932927683s: 'No new documents were added.'","timestamp":"1789372800459878248","date":"2026-09-14T08:00:00.459Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 13:30:00,061] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[11102e64-ff4b-4f31-ab42-17af25b5dd03] received","timestamp":"1789372800061985246","date":"2026-09-14T08:00:00.061Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 13:30:00,059] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)","timestamp":"1789372800059382901","date":"2026-09-14T08:00:00.059Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 13:20:00,490] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[5f4d774c-0a0a-4273-bf4b-792825e13fdf] succeeded in 0.38414866803213954s: 'No new documents were added.'","timestamp":"1789372200491173212","date":"2026-09-14T07:50:00.491Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 13:20:00,104] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[5f4d774c-0a0a-4273-bf4b-792825e13fdf] received","timestamp":"1789372200104579517","date":"2026-09-14T07:50:00.104Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 13:20:00,101] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)","timestamp":"1789372200101742564","date":"2026-09-14T07:50:00.101Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 13:10:00,387] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[f3ed112a-4035-4e54-8a5a-42615878bffa] succeeded in 0.31642424094025046s: 'No new documents were added.'","timestamp":"1789371600387693169","date":"2026-09-14T07:40:00.387Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 13:10:00,068] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[f3ed112a-4035-4e54-8a5a-42615878bffa] received","timestamp":"1789371600069242446","date":"2026-09-14T07:40:00.069Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 13:10:00,065] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)","timestamp":"1789371600066329300","date":"2026-09-14T07:40:00.066Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 13:05:03,873] [INFO] [celery.app.trace] Task documents.tasks.train_classifier[e9331939-cd9a-451a-81bd-73474d6ff572] succeeded in 3.75771487201564s: None","timestamp":"1789371303873658375","date":"2026-09-14T07:35:03.873Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 13:05:03,481] [INFO] [paperless.classifier] No updates since last training","timestamp":"1789371303481489999","date":"2026-09-14T07:35:03.481Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 13:05:00,666] [INFO] [celery.app.trace] Task documents.tasks.check_scheduled_workflows[e959eb63-fdfa-42a8-8e0a-8134728b74e1] succeeded in 0.5511709010461345s: None","timestamp":"1789371300667179664","date":"2026-09-14T07:35:00.667Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 13:05:00,114] [INFO] [celery.worker.strategy] Task documents.tasks.train_classifier[e9331939-cd9a-451a-81bd-73474d6ff572] received","timestamp":"1789371300114981226","date":"2026-09-14T07:35:00.114Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 13:05:00,112] [INFO] [celery.worker.strategy] Task documents.tasks.check_scheduled_workflows[e959eb63-fdfa-42a8-8e0a-8134728b74e1] received","timestamp":"1789371300112931648","date":"2026-09-14T07:35:00.112Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 13:05:00,112] [INFO] [celery.beat] Scheduler: Sending due task Train the classifier (documents.tasks.train_classifier)","timestamp":"1789371300112520124","date":"2026-09-14T07:35:00.112Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 13:05:00,108] [INFO] [celery.beat] Scheduler: Sending due task Check and run scheduled workflows (documents.tasks.check_scheduled_workflows)","timestamp":"1789371300109935263","date":"2026-09-14T07:35:00.109Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 13:00:00,459] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[20d79182-4622-4f9d-a7f8-3ee5a1730448] succeeded in 0.3596227680100128s: 'No new documents were added.'","timestamp":"1789371000460588542","date":"2026-09-14T07:30:00.460Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 13:00:00,097] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[20d79182-4622-4f9d-a7f8-3ee5a1730448] received","timestamp":"1789371000097995040","date":"2026-09-14T07:30:00.097Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 13:00:00,094] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)","timestamp":"1789371000095171551","date":"2026-09-14T07:30:00.095Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 12:50:00,367] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[4dcb6bef-fc83-48e6-bc4f-990d02a90d97] succeeded in 0.3291417019208893s: 'No new documents were added.'","timestamp":"1789370400368790518","date":"2026-09-14T07:20:00.368Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 12:50:00,036] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[4dcb6bef-fc83-48e6-bc4f-990d02a90d97] received","timestamp":"1789370400036776323","date":"2026-09-14T07:20:00.036Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 12:50:00,033] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)","timestamp":"1789370400034087868","date":"2026-09-14T07:20:00.034Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 12:40:00,423] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[51d010d0-ef00-4c63-b41b-6a3ed0e3b211] succeeded in 0.3510422359686345s: 'No new documents were added.'","timestamp":"1789369800424685553","date":"2026-09-14T07:10:00.424Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 12:40:00,069] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[51d010d0-ef00-4c63-b41b-6a3ed0e3b211] received","timestamp":"1789369800071488130","date":"2026-09-14T07:10:00.071Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 12:40:00,067] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)","timestamp":"1789369800067597339","date":"2026-09-14T07:10:00.067Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 12:30:00,377] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[92e12ba8-660c-46c9-bed0-241045d3ef8e] succeeded in 0.33854550309479237s: 'No new documents were added.'","timestamp":"1789369200378128986","date":"2026-09-14T07:00:00.378Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 12:30:00,037] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[92e12ba8-660c-46c9-bed0-241045d3ef8e] received","timestamp":"1789369200037738573","date":"2026-09-14T07:00:00.037Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 12:30:00,034] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)","timestamp":"1789369200035254042","date":"2026-09-14T07:00:00.035Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 12:20:00,919] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[8ebb19dc-9c1a-45a1-ba38-ddb89188e3d8] succeeded in 0.3876996709732339s: 'No new documents were added.'","timestamp":"1789368600919858326","date":"2026-09-14T06:50:00.919Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 12:20:00,527] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[8ebb19dc-9c1a-45a1-ba38-ddb89188e3d8] received","timestamp":"1789368600528964622","date":"2026-09-14T06:50:00.528Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 12:20:00,522] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)","timestamp":"1789368600523279470","date":"2026-09-14T06:50:00.523Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 12:10:00,358] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[99cc7618-3ed0-42ee-91fa-bd3313b217ef] succeeded in 0.3149627110688016s: 'No new documents were added.'","timestamp":"1789368000359475992","date":"2026-09-14T06:40:00.359Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 12:10:00,041] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[99cc7618-3ed0-42ee-91fa-bd3313b217ef] received","timestamp":"1789368000041630280","date":"2026-09-14T06:40:00.041Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 12:10:00,036] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)","timestamp":"1789368000037797725","date":"2026-09-14T06:40:00.037Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 12:05:03,285] [INFO] [celery.app.trace] Task documents.tasks.train_classifier[4e83fb89-de27-4ff9-a599-31ab7e35b2c2] succeeded in 3.1250294729834422s: None","timestamp":"1789367703285963134","date":"2026-09-14T06:35:03.285Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 12:05:02,896] [INFO] [paperless.classifier] No updates since last training","timestamp":"1789367702897285747","date":"2026-09-14T06:35:02.897Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 12:05:00,819] [INFO] [celery.app.trace] Task documents.tasks.check_scheduled_workflows[b1182287-5102-4ebf-a1e6-12e187ec14dc] succeeded in 0.6584226550767198s: None","timestamp":"1789367700821367234","date":"2026-09-14T06:35:00.821Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 12:05:00,159] [INFO] [celery.worker.strategy] Task documents.tasks.check_scheduled_workflows[b1182287-5102-4ebf-a1e6-12e187ec14dc] received","timestamp":"1789367700161218194","date":"2026-09-14T06:35:00.161Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 12:05:00,157] [INFO] [celery.worker.strategy] Task documents.tasks.train_classifier[4e83fb89-de27-4ff9-a599-31ab7e35b2c2] received","timestamp":"1789367700158037766","date":"2026-09-14T06:35:00.158Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 12:05:00,157] [INFO] [celery.beat] Scheduler: Sending due task Check and run scheduled workflows (documents.tasks.check_scheduled_workflows)","timestamp":"1789367700158021698","date":"2026-09-14T06:35:00.158Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 12:05:00,154] [INFO] [celery.beat] Scheduler: Sending due task Train the classifier (documents.tasks.train_classifier)","timestamp":"1789367700155026388","date":"2026-09-14T06:35:00.155Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 12:00:00,885] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[1f72daa0-0589-4f69-a3ea-cbe6480e1d33] succeeded in 0.4074761338997632s: 'No new documents were added.'","timestamp":"1789367400886569672","date":"2026-09-14T06:30:00.886Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 12:00:00,475] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[1f72daa0-0589-4f69-a3ea-cbe6480e1d33] received","timestamp":"1789367400476360036","date":"2026-09-14T06:30:00.476Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 12:00:00,473] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)","timestamp":"1789367400473759318","date":"2026-09-14T06:30:00.473Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 11:50:00,502] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[c14a3c79-4390-47a9-9abb-37a041ca45a5] succeeded in 0.39393738796934485s: 'No new documents were added.'","timestamp":"1789366800503898993","date":"2026-09-14T06:20:00.503Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 11:50:00,106] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[c14a3c79-4390-47a9-9abb-37a041ca45a5] received","timestamp":"1789366800109864420","date":"2026-09-14T06:20:00.109Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 11:50:00,103] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)","timestamp":"1789366800103395934","date":"2026-09-14T06:20:00.103Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 11:40:00,615] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[afcc7eee-6e18-4cb9-abfe-551cb1e40505] succeeded in 0.4053242519730702s: 'No new documents were added.'","timestamp":"1789366200615890068","date":"2026-09-14T06:10:00.615Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 11:40:00,208] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[afcc7eee-6e18-4cb9-abfe-551cb1e40505] received","timestamp":"1789366200208673903","date":"2026-09-14T06:10:00.208Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 11:40:00,205] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)","timestamp":"1789366200205872269","date":"2026-09-14T06:10:00.205Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 11:30:01,710] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[843816fd-3bc9-47ed-8226-bf9bae6a6763] succeeded in 0.4990610929671675s: 'No new documents were added.'","timestamp":"1789365601711704920","date":"2026-09-14T06:00:01.711Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 11:30:01,209] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[843816fd-3bc9-47ed-8226-bf9bae6a6763] received","timestamp":"1789365601209782980","date":"2026-09-14T06:00:01.209Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 11:30:01,206] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)","timestamp":"1789365601207065575","date":"2026-09-14T06:00:01.207Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 11:20:00,363] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[aea58274-1a07-4457-aa54-3308133e31a4] succeeded in 0.316666572005488s: 'No new documents were added.'","timestamp":"1789365000364343841","date":"2026-09-14T05:50:00.364Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 11:20:00,045] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[aea58274-1a07-4457-aa54-3308133e31a4] received","timestamp":"1789365000045891546","date":"2026-09-14T05:50:00.045Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 11:20:00,042] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)","timestamp":"1789365000042698879","date":"2026-09-14T05:50:00.042Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 11:10:01,553] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[39ba5d8a-39de-414d-94b1-2e0baa3be2cd] succeeded in 0.6091236040228978s: 'No new documents were added.'","timestamp":"1789364401555618768","date":"2026-09-14T05:40:01.555Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 11:10:00,939] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[39ba5d8a-39de-414d-94b1-2e0baa3be2cd] received","timestamp":"1789364400940812549","date":"2026-09-14T05:40:00.940Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 11:10:00,931] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)","timestamp":"1789364400932343833","date":"2026-09-14T05:40:00.932Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 11:05:03,224] [INFO] [celery.app.trace] Task documents.tasks.train_classifier[acb6bab9-f138-40a8-9ead-b8190a7066c7] succeeded in 3.1256979119498283s: None","timestamp":"1789364103225340533","date":"2026-09-14T05:35:03.225Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 11:05:02,990] [INFO] [paperless.classifier] No updates since last training","timestamp":"1789364102990881128","date":"2026-09-14T05:35:02.990Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 11:05:00,964] [INFO] [celery.app.trace] Task documents.tasks.check_scheduled_workflows[e710b71f-a525-4be1-983f-12c899d79c22] succeeded in 0.8634637920185924s: None","timestamp":"1789364100968887323","date":"2026-09-14T05:35:00.968Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 11:05:00,099] [INFO] [celery.worker.strategy] Task documents.tasks.check_scheduled_workflows[e710b71f-a525-4be1-983f-12c899d79c22] received","timestamp":"1789364100099910811","date":"2026-09-14T05:35:00.099Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 11:05:00,096] [INFO] [celery.worker.strategy] Task documents.tasks.train_classifier[acb6bab9-f138-40a8-9ead-b8190a7066c7] received","timestamp":"1789364100097497998","date":"2026-09-14T05:35:00.097Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 11:05:00,096] [INFO] [celery.beat] Scheduler: Sending due task Check and run scheduled workflows (documents.tasks.check_scheduled_workflows)","timestamp":"1789364100096933205","date":"2026-09-14T05:35:00.096Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 11:05:00,093] [INFO] [celery.beat] Scheduler: Sending due task Train the classifier (documents.tasks.train_classifier)","timestamp":"1789364100094134583","date":"2026-09-14T05:35:00.094Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 11:00:00,440] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[52a0c58d-5e09-4bf5-a776-8401bedc594a] succeeded in 0.37314864608924836s: 'No new documents were added.'","timestamp":"1789363800442199764","date":"2026-09-14T05:30:00.442Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 11:00:00,065] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[52a0c58d-5e09-4bf5-a776-8401bedc594a] received","timestamp":"1789363800066049713","date":"2026-09-14T05:30:00.066Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 11:00:00,062] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)","timestamp":"1789363800063089216","date":"2026-09-14T05:30:00.063Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 10:50:00,484] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[3b24438f-a8c8-4ac8-8b3a-2b13f31e47a2] succeeded in 0.4264359390363097s: 'No new documents were added.'","timestamp":"1789363200485480995","date":"2026-09-14T05:20:00.485Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 10:50:00,056] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[3b24438f-a8c8-4ac8-8b3a-2b13f31e47a2] received","timestamp":"1789363200057255248","date":"2026-09-14T05:20:00.057Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 10:50:00,053] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)","timestamp":"1789363200054121393","date":"2026-09-14T05:20:00.054Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 10:40:00,502] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[87e55fa2-a224-4332-8208-4f83eac0b214] succeeded in 0.42377272399608046s: 'No new documents were added.'","timestamp":"1789362600502830969","date":"2026-09-14T05:10:00.502Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 10:40:00,075] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[87e55fa2-a224-4332-8208-4f83eac0b214] received","timestamp":"1789362600076686001","date":"2026-09-14T05:10:00.076Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 10:40:00,071] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)","timestamp":"1789362600073090544","date":"2026-09-14T05:10:00.073Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 10:30:01,582] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[ffc51563-6a5b-4fa2-8581-4df68f49e214] succeeded in 0.6030207800213248s: 'No new documents were added.'","timestamp":"1789362001583013989","date":"2026-09-14T05:00:01.583Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 10:30:00,977] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[ffc51563-6a5b-4fa2-8581-4df68f49e214] received","timestamp":"1789362000977931194","date":"2026-09-14T05:00:00.977Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 10:30:00,974] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)","timestamp":"1789362000974744741","date":"2026-09-14T05:00:00.974Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 10:20:00,930] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[2e78d469-93a5-4a3d-9439-c804218cb5d2] succeeded in 0.8201952310046181s: 'No new documents were added.'","timestamp":"1789361400930932850","date":"2026-09-14T04:50:00.930Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 10:20:00,108] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[2e78d469-93a5-4a3d-9439-c804218cb5d2] received","timestamp":"1789361400108886151","date":"2026-09-14T04:50:00.108Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 10:20:00,105] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)","timestamp":"1789361400106064991","date":"2026-09-14T04:50:00.106Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 10:10:00,496] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[c69e2ad2-eea6-455b-ab2d-ef7c376b9c4a] succeeded in 0.4505872359732166s: 'No new documents were added.'","timestamp":"1789360800497479989","date":"2026-09-14T04:40:00.497Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 10:10:00,044] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[c69e2ad2-eea6-455b-ab2d-ef7c376b9c4a] received","timestamp":"1789360800044646016","date":"2026-09-14T04:40:00.044Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 10:10:00,041] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)","timestamp":"1789360800041893328","date":"2026-09-14T04:40:00.041Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 10:05:04,878] [INFO] [celery.app.trace] Task documents.tasks.train_classifier[27e1a174-a2cf-4cc2-a228-e858c67d3deb] succeeded in 3.902865079930052s: None","timestamp":"1789360504878499947","date":"2026-09-14T04:35:04.878Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 10:05:04,545] [INFO] [paperless.classifier] No updates since last training","timestamp":"1789360504545818503","date":"2026-09-14T04:35:04.545Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 10:05:01,750] [INFO] [celery.app.trace] Task documents.tasks.check_scheduled_workflows[6c100c2f-bdf7-4d93-94e5-e03d43e57ddd] succeeded in 0.7792122290702537s: None","timestamp":"1789360501752358494","date":"2026-09-14T04:35:01.752Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 10:05:00,969] [INFO] [celery.worker.strategy] Task documents.tasks.train_classifier[27e1a174-a2cf-4cc2-a228-e858c67d3deb] received","timestamp":"1789360500970469305","date":"2026-09-14T04:35:00.970Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 10:05:00,963] [INFO] [celery.worker.strategy] Task documents.tasks.check_scheduled_workflows[6c100c2f-bdf7-4d93-94e5-e03d43e57ddd] received","timestamp":"1789360500964827729","date":"2026-09-14T04:35:00.964Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 10:05:00,962] [INFO] [celery.beat] Scheduler: Sending due task Train the classifier (documents.tasks.train_classifier)","timestamp":"1789360500963270791","date":"2026-09-14T04:35:00.963Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 10:05:00,955] [INFO] [celery.beat] Scheduler: Sending due task Check and run scheduled workflows (documents.tasks.check_scheduled_workflows)","timestamp":"1789360500955896052","date":"2026-09-14T04:35:00.955Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 10:00:01,575] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[d52d067e-102c-4e71-8287-1178b299c7c5] succeeded in 0.5940474020317197s: 'No new documents were added.'","timestamp":"1789360201576012073","date":"2026-09-14T04:30:01.576Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 10:00:00,979] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[d52d067e-102c-4e71-8287-1178b299c7c5] received","timestamp":"1789360200979980557","date":"2026-09-14T04:30:00.979Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 10:00:00,976] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)","timestamp":"1789360200977263547","date":"2026-09-14T04:30:00.977Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 09:50:01,525] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[a9aa1dc7-9a35-4dd5-a623-1f2bbc4cebc1] succeeded in 0.5220787239959463s: 'No new documents were added.'","timestamp":"1789359601526269835","date":"2026-09-14T04:20:01.526Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 09:50:01,001] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[a9aa1dc7-9a35-4dd5-a623-1f2bbc4cebc1] received","timestamp":"1789359601002231605","date":"2026-09-14T04:20:01.002Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 09:50:00,999] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)","timestamp":"1789359600999530277","date":"2026-09-14T04:20:00.999Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 09:40:00,488] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[5c462b72-0d7d-4cb9-b58b-ffd1a9bce8e4] succeeded in 0.382699694018811s: 'No new documents were added.'","timestamp":"1789359000489250458","date":"2026-09-14T04:10:00.489Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 09:40:00,104] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[5c462b72-0d7d-4cb9-b58b-ffd1a9bce8e4] received","timestamp":"1789359000104647154","date":"2026-09-14T04:10:00.104Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 09:40:00,101] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)","timestamp":"1789359000101477856","date":"2026-09-14T04:10:00.101Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 09:30:00,468] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[7a57d826-0fb8-4ade-b0a2-51f9d8424996] succeeded in 0.40420833393000066s: 'No new documents were added.'","timestamp":"1789358400468958869","date":"2026-09-14T04:00:00.468Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 09:30:00,062] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[7a57d826-0fb8-4ade-b0a2-51f9d8424996] received","timestamp":"1789358400062719621","date":"2026-09-14T04:00:00.062Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 09:30:00,059] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)","timestamp":"1789358400059615848","date":"2026-09-14T04:00:00.059Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 09:20:00,780] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[23eeeed5-1aba-4209-b22e-64e231c4dd5c] succeeded in 0.4585943730780855s: 'No new documents were added.'","timestamp":"1789357800781321853","date":"2026-09-14T03:50:00.781Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 09:20:00,320] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[23eeeed5-1aba-4209-b22e-64e231c4dd5c] received","timestamp":"1789357800320894572","date":"2026-09-14T03:50:00.320Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 09:20:00,316] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)","timestamp":"1789357800317314314","date":"2026-09-14T03:50:00.317Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 09:10:00,497] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[3227a261-c345-4ef7-8878-f1aaafad9b03] succeeded in 0.42622469004709274s: 'No new documents were added.'","timestamp":"1789357200498429746","date":"2026-09-14T03:40:00.498Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 09:10:00,069] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[3227a261-c345-4ef7-8878-f1aaafad9b03] received","timestamp":"1789357200070353991","date":"2026-09-14T03:40:00.070Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 09:10:00,066] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)","timestamp":"1789357200067280120","date":"2026-09-14T03:40:00.067Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 09:05:03,770] [INFO] [celery.app.trace] Task documents.tasks.train_classifier[0cd20631-c42d-4883-b72e-3a77f397f5bd] succeeded in 3.17944802204147s: None","timestamp":"1789356903771363281","date":"2026-09-14T03:35:03.771Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 09:05:03,521] [INFO] [paperless.classifier] No updates since last training","timestamp":"1789356903521523343","date":"2026-09-14T03:35:03.521Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 09:05:01,735] [INFO] [celery.app.trace] Task documents.tasks.check_scheduled_workflows[f02e58d9-a2a9-4dab-b54f-2957368bd28c] succeeded in 1.1450692740036175s: None","timestamp":"1789356901736390295","date":"2026-09-14T03:35:01.736Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 09:05:00,589] [INFO] [celery.worker.strategy] Task documents.tasks.train_classifier[0cd20631-c42d-4883-b72e-3a77f397f5bd] received","timestamp":"1789356900590205963","date":"2026-09-14T03:35:00.590Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 09:05:00,587] [INFO] [celery.worker.strategy] Task documents.tasks.check_scheduled_workflows[f02e58d9-a2a9-4dab-b54f-2957368bd28c] received","timestamp":"1789356900588316024","date":"2026-09-14T03:35:00.588Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 09:05:00,587] [INFO] [celery.beat] Scheduler: Sending due task Train the classifier (documents.tasks.train_classifier)","timestamp":"1789356900587335787","date":"2026-09-14T03:35:00.587Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 09:05:00,584] [INFO] [celery.beat] Scheduler: Sending due task Check and run scheduled workflows (documents.tasks.check_scheduled_workflows)","timestamp":"1789356900585098461","date":"2026-09-14T03:35:00.585Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 09:00:00,486] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[462718a0-797a-42a7-8d91-ea01b6e5e004] succeeded in 0.4048626250587404s: 'No new documents were added.'","timestamp":"1789356600486606808","date":"2026-09-14T03:30:00.486Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 09:00:00,079] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[462718a0-797a-42a7-8d91-ea01b6e5e004] received","timestamp":"1789356600079888453","date":"2026-09-14T03:30:00.079Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 09:00:00,076] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)","timestamp":"1789356600076871973","date":"2026-09-14T03:30:00.076Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 08:50:00,442] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[d5aebba7-884a-49f2-98d6-e8315e4514b3] succeeded in 0.3683183479588479s: 'No new documents were added.'","timestamp":"1789356000444431309","date":"2026-09-14T03:20:00.444Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 08:50:00,072] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[d5aebba7-884a-49f2-98d6-e8315e4514b3] received","timestamp":"1789356000073095815","date":"2026-09-14T03:20:00.073Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 08:50:00,069] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)","timestamp":"1789356000070098584","date":"2026-09-14T03:20:00.070Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 08:40:00,513] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[b6be895a-056b-4901-8205-b6af2b0be738] succeeded in 0.4594221489969641s: 'No new documents were added.'","timestamp":"1789355400513606775","date":"2026-09-14T03:10:00.513Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 08:40:00,051] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[b6be895a-056b-4901-8205-b6af2b0be738] received","timestamp":"1789355400062976332","date":"2026-09-14T03:10:00.062Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 08:40:00,048] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)","timestamp":"1789355400049966270","date":"2026-09-14T03:10:00.049Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 08:30:00,793] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[054b09a7-7a6a-4ba0-99f4-9b25d283b04d] succeeded in 0.49802307097706944s: 'No new documents were added.'","timestamp":"1789354800793926599","date":"2026-09-14T03:00:00.793Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 08:30:00,293] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[054b09a7-7a6a-4ba0-99f4-9b25d283b04d] received","timestamp":"1789354800294093165","date":"2026-09-14T03:00:00.294Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 08:30:00,291] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)","timestamp":"1789354800291453595","date":"2026-09-14T03:00:00.291Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 08:20:00,795] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[d11c05dc-0f4a-477f-a436-85386d2a8073] succeeded in 0.46933044597972184s: 'No new documents were added.'","timestamp":"1789354200797302093","date":"2026-09-14T02:50:00.797Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 08:20:00,324] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[d11c05dc-0f4a-477f-a436-85386d2a8073] received","timestamp":"1789354200325019672","date":"2026-09-14T02:50:00.325Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 08:20:00,321] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)","timestamp":"1789354200322203290","date":"2026-09-14T02:50:00.322Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 08:10:01,962] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[d8570ced-d581-4abc-af40-138633b77cdf] succeeded in 0.7496823540423065s: 'No new documents were added.'","timestamp":"1789353601963069226","date":"2026-09-14T02:40:01.963Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 08:10:01,205] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[d8570ced-d581-4abc-af40-138633b77cdf] received","timestamp":"1789353601207025869","date":"2026-09-14T02:40:01.207Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}},{"line":"[2026-09-14 08:10:01,197] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)","timestamp":"1789353601198012585","date":"2026-09-14T02:40:01.198Z","fields":{"container_id":"cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55","container_name":"paperless","detected_level":"info","host":"main_server","job":"docker_logs","service_name":"paperless"}}]
+[
+    {
+        "line": "[2026-09-14 14:05:03,209] [INFO] [celery.app.trace] Task documents.tasks.train_classifier[f4abf29f-8397-45eb-be49-1c7932e804f0] succeeded in 3.0755382630741224s: None",
+        "timestamp": "1789374903209372252",
+        "date": "2026-09-14T08:35:03.209Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 14:05:02,854] [INFO] [paperless.classifier] No updates since last training",
+        "timestamp": "1789374902854733558",
+        "date": "2026-09-14T08:35:02.854Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 14:05:00,798] [INFO] [celery.app.trace] Task documents.tasks.check_scheduled_workflows[f9b69864-292c-4320-b4ca-f165cdefef0b] succeeded in 0.6650895599741489s: None",
+        "timestamp": "1789374900799227542",
+        "date": "2026-09-14T08:35:00.799Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 14:05:00,132] [INFO] [celery.worker.strategy] Task documents.tasks.check_scheduled_workflows[f9b69864-292c-4320-b4ca-f165cdefef0b] received",
+        "timestamp": "1789374900132985221",
+        "date": "2026-09-14T08:35:00.132Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 14:05:00,130] [INFO] [celery.worker.strategy] Task documents.tasks.train_classifier[f4abf29f-8397-45eb-be49-1c7932e804f0] received",
+        "timestamp": "1789374900131032148",
+        "date": "2026-09-14T08:35:00.131Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 14:05:00,127] [INFO] [celery.beat] Scheduler: Sending due task Check and run scheduled workflows (documents.tasks.check_scheduled_workflows)",
+        "timestamp": "1789374900131007534",
+        "date": "2026-09-14T08:35:00.131Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 14:05:00,124] [INFO] [celery.beat] Scheduler: Sending due task Train the classifier (documents.tasks.train_classifier)",
+        "timestamp": "1789374900124842352",
+        "date": "2026-09-14T08:35:00.124Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 14:00:00,384] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[ea3ada2e-3b38-4365-805c-63024df3bc40] succeeded in 0.33895179396495223s: 'No new documents were added.'",
+        "timestamp": "1789374600384535107",
+        "date": "2026-09-14T08:30:00.384Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 14:00:00,043] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[ea3ada2e-3b38-4365-805c-63024df3bc40] received",
+        "timestamp": "1789374600043811217",
+        "date": "2026-09-14T08:30:00.043Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 14:00:00,040] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)",
+        "timestamp": "1789374600040734264",
+        "date": "2026-09-14T08:30:00.040Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 13:50:01,049] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[2c12bed5-df23-4455-ad91-f411fdefa865] succeeded in 0.45259570400230587s: 'No new documents were added.'",
+        "timestamp": "1789374001049730285",
+        "date": "2026-09-14T08:20:01.049Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 13:50:00,594] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[2c12bed5-df23-4455-ad91-f411fdefa865] received",
+        "timestamp": "1789374000595369072",
+        "date": "2026-09-14T08:20:00.595Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 13:50:00,591] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)",
+        "timestamp": "1789374000592614887",
+        "date": "2026-09-14T08:20:00.592Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 13:40:00,442] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[d532550e-f7e4-4f64-8d10-c79be60ec01d] succeeded in 0.3440809400053695s: 'No new documents were added.'",
+        "timestamp": "1789373400443947758",
+        "date": "2026-09-14T08:10:00.443Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 13:40:00,096] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[d532550e-f7e4-4f64-8d10-c79be60ec01d] received",
+        "timestamp": "1789373400097001522",
+        "date": "2026-09-14T08:10:00.097Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 13:40:00,093] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)",
+        "timestamp": "1789373400094232877",
+        "date": "2026-09-14T08:10:00.094Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 13:30:00,458] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[11102e64-ff4b-4f31-ab42-17af25b5dd03] succeeded in 0.394872932927683s: 'No new documents were added.'",
+        "timestamp": "1789372800459878248",
+        "date": "2026-09-14T08:00:00.459Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 13:30:00,061] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[11102e64-ff4b-4f31-ab42-17af25b5dd03] received",
+        "timestamp": "1789372800061985246",
+        "date": "2026-09-14T08:00:00.061Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 13:30:00,059] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)",
+        "timestamp": "1789372800059382901",
+        "date": "2026-09-14T08:00:00.059Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 13:20:00,490] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[5f4d774c-0a0a-4273-bf4b-792825e13fdf] succeeded in 0.38414866803213954s: 'No new documents were added.'",
+        "timestamp": "1789372200491173212",
+        "date": "2026-09-14T07:50:00.491Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 13:20:00,104] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[5f4d774c-0a0a-4273-bf4b-792825e13fdf] received",
+        "timestamp": "1789372200104579517",
+        "date": "2026-09-14T07:50:00.104Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 13:20:00,101] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)",
+        "timestamp": "1789372200101742564",
+        "date": "2026-09-14T07:50:00.101Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 13:10:00,387] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[f3ed112a-4035-4e54-8a5a-42615878bffa] succeeded in 0.31642424094025046s: 'No new documents were added.'",
+        "timestamp": "1789371600387693169",
+        "date": "2026-09-14T07:40:00.387Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 13:10:00,068] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[f3ed112a-4035-4e54-8a5a-42615878bffa] received",
+        "timestamp": "1789371600069242446",
+        "date": "2026-09-14T07:40:00.069Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 13:10:00,065] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)",
+        "timestamp": "1789371600066329300",
+        "date": "2026-09-14T07:40:00.066Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 13:05:03,873] [INFO] [celery.app.trace] Task documents.tasks.train_classifier[e9331939-cd9a-451a-81bd-73474d6ff572] succeeded in 3.75771487201564s: None",
+        "timestamp": "1789371303873658375",
+        "date": "2026-09-14T07:35:03.873Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 13:05:03,481] [INFO] [paperless.classifier] No updates since last training",
+        "timestamp": "1789371303481489999",
+        "date": "2026-09-14T07:35:03.481Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 13:05:00,666] [INFO] [celery.app.trace] Task documents.tasks.check_scheduled_workflows[e959eb63-fdfa-42a8-8e0a-8134728b74e1] succeeded in 0.5511709010461345s: None",
+        "timestamp": "1789371300667179664",
+        "date": "2026-09-14T07:35:00.667Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 13:05:00,114] [INFO] [celery.worker.strategy] Task documents.tasks.train_classifier[e9331939-cd9a-451a-81bd-73474d6ff572] received",
+        "timestamp": "1789371300114981226",
+        "date": "2026-09-14T07:35:00.114Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 13:05:00,112] [INFO] [celery.worker.strategy] Task documents.tasks.check_scheduled_workflows[e959eb63-fdfa-42a8-8e0a-8134728b74e1] received",
+        "timestamp": "1789371300112931648",
+        "date": "2026-09-14T07:35:00.112Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 13:05:00,112] [INFO] [celery.beat] Scheduler: Sending due task Train the classifier (documents.tasks.train_classifier)",
+        "timestamp": "1789371300112520124",
+        "date": "2026-09-14T07:35:00.112Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 13:05:00,108] [INFO] [celery.beat] Scheduler: Sending due task Check and run scheduled workflows (documents.tasks.check_scheduled_workflows)",
+        "timestamp": "1789371300109935263",
+        "date": "2026-09-14T07:35:00.109Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 13:00:00,459] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[20d79182-4622-4f9d-a7f8-3ee5a1730448] succeeded in 0.3596227680100128s: 'No new documents were added.'",
+        "timestamp": "1789371000460588542",
+        "date": "2026-09-14T07:30:00.460Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 13:00:00,097] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[20d79182-4622-4f9d-a7f8-3ee5a1730448] received",
+        "timestamp": "1789371000097995040",
+        "date": "2026-09-14T07:30:00.097Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 13:00:00,094] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)",
+        "timestamp": "1789371000095171551",
+        "date": "2026-09-14T07:30:00.095Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 12:50:00,367] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[4dcb6bef-fc83-48e6-bc4f-990d02a90d97] succeeded in 0.3291417019208893s: 'No new documents were added.'",
+        "timestamp": "1789370400368790518",
+        "date": "2026-09-14T07:20:00.368Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 12:50:00,036] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[4dcb6bef-fc83-48e6-bc4f-990d02a90d97] received",
+        "timestamp": "1789370400036776323",
+        "date": "2026-09-14T07:20:00.036Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 12:50:00,033] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)",
+        "timestamp": "1789370400034087868",
+        "date": "2026-09-14T07:20:00.034Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 12:40:00,423] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[51d010d0-ef00-4c63-b41b-6a3ed0e3b211] succeeded in 0.3510422359686345s: 'No new documents were added.'",
+        "timestamp": "1789369800424685553",
+        "date": "2026-09-14T07:10:00.424Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 12:40:00,069] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[51d010d0-ef00-4c63-b41b-6a3ed0e3b211] received",
+        "timestamp": "1789369800071488130",
+        "date": "2026-09-14T07:10:00.071Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 12:40:00,067] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)",
+        "timestamp": "1789369800067597339",
+        "date": "2026-09-14T07:10:00.067Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 12:30:00,377] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[92e12ba8-660c-46c9-bed0-241045d3ef8e] succeeded in 0.33854550309479237s: 'No new documents were added.'",
+        "timestamp": "1789369200378128986",
+        "date": "2026-09-14T07:00:00.378Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 12:30:00,037] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[92e12ba8-660c-46c9-bed0-241045d3ef8e] received",
+        "timestamp": "1789369200037738573",
+        "date": "2026-09-14T07:00:00.037Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 12:30:00,034] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)",
+        "timestamp": "1789369200035254042",
+        "date": "2026-09-14T07:00:00.035Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 12:20:00,919] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[8ebb19dc-9c1a-45a1-ba38-ddb89188e3d8] succeeded in 0.3876996709732339s: 'No new documents were added.'",
+        "timestamp": "1789368600919858326",
+        "date": "2026-09-14T06:50:00.919Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 12:20:00,527] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[8ebb19dc-9c1a-45a1-ba38-ddb89188e3d8] received",
+        "timestamp": "1789368600528964622",
+        "date": "2026-09-14T06:50:00.528Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 12:20:00,522] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)",
+        "timestamp": "1789368600523279470",
+        "date": "2026-09-14T06:50:00.523Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 12:10:00,358] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[99cc7618-3ed0-42ee-91fa-bd3313b217ef] succeeded in 0.3149627110688016s: 'No new documents were added.'",
+        "timestamp": "1789368000359475992",
+        "date": "2026-09-14T06:40:00.359Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 12:10:00,041] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[99cc7618-3ed0-42ee-91fa-bd3313b217ef] received",
+        "timestamp": "1789368000041630280",
+        "date": "2026-09-14T06:40:00.041Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 12:10:00,036] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)",
+        "timestamp": "1789368000037797725",
+        "date": "2026-09-14T06:40:00.037Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 12:05:03,285] [INFO] [celery.app.trace] Task documents.tasks.train_classifier[4e83fb89-de27-4ff9-a599-31ab7e35b2c2] succeeded in 3.1250294729834422s: None",
+        "timestamp": "1789367703285963134",
+        "date": "2026-09-14T06:35:03.285Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 12:05:02,896] [INFO] [paperless.classifier] No updates since last training",
+        "timestamp": "1789367702897285747",
+        "date": "2026-09-14T06:35:02.897Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 12:05:00,819] [INFO] [celery.app.trace] Task documents.tasks.check_scheduled_workflows[b1182287-5102-4ebf-a1e6-12e187ec14dc] succeeded in 0.6584226550767198s: None",
+        "timestamp": "1789367700821367234",
+        "date": "2026-09-14T06:35:00.821Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 12:05:00,159] [INFO] [celery.worker.strategy] Task documents.tasks.check_scheduled_workflows[b1182287-5102-4ebf-a1e6-12e187ec14dc] received",
+        "timestamp": "1789367700161218194",
+        "date": "2026-09-14T06:35:00.161Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 12:05:00,157] [INFO] [celery.worker.strategy] Task documents.tasks.train_classifier[4e83fb89-de27-4ff9-a599-31ab7e35b2c2] received",
+        "timestamp": "1789367700158037766",
+        "date": "2026-09-14T06:35:00.158Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 12:05:00,157] [INFO] [celery.beat] Scheduler: Sending due task Check and run scheduled workflows (documents.tasks.check_scheduled_workflows)",
+        "timestamp": "1789367700158021698",
+        "date": "2026-09-14T06:35:00.158Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 12:05:00,154] [INFO] [celery.beat] Scheduler: Sending due task Train the classifier (documents.tasks.train_classifier)",
+        "timestamp": "1789367700155026388",
+        "date": "2026-09-14T06:35:00.155Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 12:00:00,885] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[1f72daa0-0589-4f69-a3ea-cbe6480e1d33] succeeded in 0.4074761338997632s: 'No new documents were added.'",
+        "timestamp": "1789367400886569672",
+        "date": "2026-09-14T06:30:00.886Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 12:00:00,475] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[1f72daa0-0589-4f69-a3ea-cbe6480e1d33] received",
+        "timestamp": "1789367400476360036",
+        "date": "2026-09-14T06:30:00.476Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 12:00:00,473] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)",
+        "timestamp": "1789367400473759318",
+        "date": "2026-09-14T06:30:00.473Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 11:50:00,502] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[c14a3c79-4390-47a9-9abb-37a041ca45a5] succeeded in 0.39393738796934485s: 'No new documents were added.'",
+        "timestamp": "1789366800503898993",
+        "date": "2026-09-14T06:20:00.503Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 11:50:00,106] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[c14a3c79-4390-47a9-9abb-37a041ca45a5] received",
+        "timestamp": "1789366800109864420",
+        "date": "2026-09-14T06:20:00.109Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 11:50:00,103] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)",
+        "timestamp": "1789366800103395934",
+        "date": "2026-09-14T06:20:00.103Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 11:40:00,615] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[afcc7eee-6e18-4cb9-abfe-551cb1e40505] succeeded in 0.4053242519730702s: 'No new documents were added.'",
+        "timestamp": "1789366200615890068",
+        "date": "2026-09-14T06:10:00.615Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 11:40:00,208] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[afcc7eee-6e18-4cb9-abfe-551cb1e40505] received",
+        "timestamp": "1789366200208673903",
+        "date": "2026-09-14T06:10:00.208Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 11:40:00,205] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)",
+        "timestamp": "1789366200205872269",
+        "date": "2026-09-14T06:10:00.205Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 11:30:01,710] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[843816fd-3bc9-47ed-8226-bf9bae6a6763] succeeded in 0.4990610929671675s: 'No new documents were added.'",
+        "timestamp": "1789365601711704920",
+        "date": "2026-09-14T06:00:01.711Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 11:30:01,209] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[843816fd-3bc9-47ed-8226-bf9bae6a6763] received",
+        "timestamp": "1789365601209782980",
+        "date": "2026-09-14T06:00:01.209Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 11:30:01,206] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)",
+        "timestamp": "1789365601207065575",
+        "date": "2026-09-14T06:00:01.207Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 11:20:00,363] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[aea58274-1a07-4457-aa54-3308133e31a4] succeeded in 0.316666572005488s: 'No new documents were added.'",
+        "timestamp": "1789365000364343841",
+        "date": "2026-09-14T05:50:00.364Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 11:20:00,045] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[aea58274-1a07-4457-aa54-3308133e31a4] received",
+        "timestamp": "1789365000045891546",
+        "date": "2026-09-14T05:50:00.045Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 11:20:00,042] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)",
+        "timestamp": "1789365000042698879",
+        "date": "2026-09-14T05:50:00.042Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 11:10:01,553] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[39ba5d8a-39de-414d-94b1-2e0baa3be2cd] succeeded in 0.6091236040228978s: 'No new documents were added.'",
+        "timestamp": "1789364401555618768",
+        "date": "2026-09-14T05:40:01.555Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 11:10:00,939] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[39ba5d8a-39de-414d-94b1-2e0baa3be2cd] received",
+        "timestamp": "1789364400940812549",
+        "date": "2026-09-14T05:40:00.940Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 11:10:00,931] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)",
+        "timestamp": "1789364400932343833",
+        "date": "2026-09-14T05:40:00.932Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 11:05:03,224] [INFO] [celery.app.trace] Task documents.tasks.train_classifier[acb6bab9-f138-40a8-9ead-b8190a7066c7] succeeded in 3.1256979119498283s: None",
+        "timestamp": "1789364103225340533",
+        "date": "2026-09-14T05:35:03.225Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 11:05:02,990] [INFO] [paperless.classifier] No updates since last training",
+        "timestamp": "1789364102990881128",
+        "date": "2026-09-14T05:35:02.990Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 11:05:00,964] [INFO] [celery.app.trace] Task documents.tasks.check_scheduled_workflows[e710b71f-a525-4be1-983f-12c899d79c22] succeeded in 0.8634637920185924s: None",
+        "timestamp": "1789364100968887323",
+        "date": "2026-09-14T05:35:00.968Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 11:05:00,099] [INFO] [celery.worker.strategy] Task documents.tasks.check_scheduled_workflows[e710b71f-a525-4be1-983f-12c899d79c22] received",
+        "timestamp": "1789364100099910811",
+        "date": "2026-09-14T05:35:00.099Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 11:05:00,096] [INFO] [celery.worker.strategy] Task documents.tasks.train_classifier[acb6bab9-f138-40a8-9ead-b8190a7066c7] received",
+        "timestamp": "1789364100097497998",
+        "date": "2026-09-14T05:35:00.097Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 11:05:00,096] [INFO] [celery.beat] Scheduler: Sending due task Check and run scheduled workflows (documents.tasks.check_scheduled_workflows)",
+        "timestamp": "1789364100096933205",
+        "date": "2026-09-14T05:35:00.096Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 11:05:00,093] [INFO] [celery.beat] Scheduler: Sending due task Train the classifier (documents.tasks.train_classifier)",
+        "timestamp": "1789364100094134583",
+        "date": "2026-09-14T05:35:00.094Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 11:00:00,440] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[52a0c58d-5e09-4bf5-a776-8401bedc594a] succeeded in 0.37314864608924836s: 'No new documents were added.'",
+        "timestamp": "1789363800442199764",
+        "date": "2026-09-14T05:30:00.442Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 11:00:00,065] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[52a0c58d-5e09-4bf5-a776-8401bedc594a] received",
+        "timestamp": "1789363800066049713",
+        "date": "2026-09-14T05:30:00.066Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 11:00:00,062] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)",
+        "timestamp": "1789363800063089216",
+        "date": "2026-09-14T05:30:00.063Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 10:50:00,484] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[3b24438f-a8c8-4ac8-8b3a-2b13f31e47a2] succeeded in 0.4264359390363097s: 'No new documents were added.'",
+        "timestamp": "1789363200485480995",
+        "date": "2026-09-14T05:20:00.485Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 10:50:00,056] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[3b24438f-a8c8-4ac8-8b3a-2b13f31e47a2] received",
+        "timestamp": "1789363200057255248",
+        "date": "2026-09-14T05:20:00.057Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 10:50:00,053] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)",
+        "timestamp": "1789363200054121393",
+        "date": "2026-09-14T05:20:00.054Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 10:40:00,502] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[87e55fa2-a224-4332-8208-4f83eac0b214] succeeded in 0.42377272399608046s: 'No new documents were added.'",
+        "timestamp": "1789362600502830969",
+        "date": "2026-09-14T05:10:00.502Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 10:40:00,075] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[87e55fa2-a224-4332-8208-4f83eac0b214] received",
+        "timestamp": "1789362600076686001",
+        "date": "2026-09-14T05:10:00.076Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 10:40:00,071] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)",
+        "timestamp": "1789362600073090544",
+        "date": "2026-09-14T05:10:00.073Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 10:30:01,582] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[ffc51563-6a5b-4fa2-8581-4df68f49e214] succeeded in 0.6030207800213248s: 'No new documents were added.'",
+        "timestamp": "1789362001583013989",
+        "date": "2026-09-14T05:00:01.583Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 10:30:00,977] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[ffc51563-6a5b-4fa2-8581-4df68f49e214] received",
+        "timestamp": "1789362000977931194",
+        "date": "2026-09-14T05:00:00.977Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 10:30:00,974] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)",
+        "timestamp": "1789362000974744741",
+        "date": "2026-09-14T05:00:00.974Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 10:20:00,930] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[2e78d469-93a5-4a3d-9439-c804218cb5d2] succeeded in 0.8201952310046181s: 'No new documents were added.'",
+        "timestamp": "1789361400930932850",
+        "date": "2026-09-14T04:50:00.930Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 10:20:00,108] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[2e78d469-93a5-4a3d-9439-c804218cb5d2] received",
+        "timestamp": "1789361400108886151",
+        "date": "2026-09-14T04:50:00.108Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 10:20:00,105] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)",
+        "timestamp": "1789361400106064991",
+        "date": "2026-09-14T04:50:00.106Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 10:10:00,496] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[c69e2ad2-eea6-455b-ab2d-ef7c376b9c4a] succeeded in 0.4505872359732166s: 'No new documents were added.'",
+        "timestamp": "1789360800497479989",
+        "date": "2026-09-14T04:40:00.497Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 10:10:00,044] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[c69e2ad2-eea6-455b-ab2d-ef7c376b9c4a] received",
+        "timestamp": "1789360800044646016",
+        "date": "2026-09-14T04:40:00.044Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 10:10:00,041] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)",
+        "timestamp": "1789360800041893328",
+        "date": "2026-09-14T04:40:00.041Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 10:05:04,878] [INFO] [celery.app.trace] Task documents.tasks.train_classifier[27e1a174-a2cf-4cc2-a228-e858c67d3deb] succeeded in 3.902865079930052s: None",
+        "timestamp": "1789360504878499947",
+        "date": "2026-09-14T04:35:04.878Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 10:05:04,545] [INFO] [paperless.classifier] No updates since last training",
+        "timestamp": "1789360504545818503",
+        "date": "2026-09-14T04:35:04.545Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 10:05:01,750] [INFO] [celery.app.trace] Task documents.tasks.check_scheduled_workflows[6c100c2f-bdf7-4d93-94e5-e03d43e57ddd] succeeded in 0.7792122290702537s: None",
+        "timestamp": "1789360501752358494",
+        "date": "2026-09-14T04:35:01.752Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 10:05:00,969] [INFO] [celery.worker.strategy] Task documents.tasks.train_classifier[27e1a174-a2cf-4cc2-a228-e858c67d3deb] received",
+        "timestamp": "1789360500970469305",
+        "date": "2026-09-14T04:35:00.970Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 10:05:00,963] [INFO] [celery.worker.strategy] Task documents.tasks.check_scheduled_workflows[6c100c2f-bdf7-4d93-94e5-e03d43e57ddd] received",
+        "timestamp": "1789360500964827729",
+        "date": "2026-09-14T04:35:00.964Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 10:05:00,962] [INFO] [celery.beat] Scheduler: Sending due task Train the classifier (documents.tasks.train_classifier)",
+        "timestamp": "1789360500963270791",
+        "date": "2026-09-14T04:35:00.963Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 10:05:00,955] [INFO] [celery.beat] Scheduler: Sending due task Check and run scheduled workflows (documents.tasks.check_scheduled_workflows)",
+        "timestamp": "1789360500955896052",
+        "date": "2026-09-14T04:35:00.955Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 10:00:01,575] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[d52d067e-102c-4e71-8287-1178b299c7c5] succeeded in 0.5940474020317197s: 'No new documents were added.'",
+        "timestamp": "1789360201576012073",
+        "date": "2026-09-14T04:30:01.576Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 10:00:00,979] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[d52d067e-102c-4e71-8287-1178b299c7c5] received",
+        "timestamp": "1789360200979980557",
+        "date": "2026-09-14T04:30:00.979Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 10:00:00,976] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)",
+        "timestamp": "1789360200977263547",
+        "date": "2026-09-14T04:30:00.977Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 09:50:01,525] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[a9aa1dc7-9a35-4dd5-a623-1f2bbc4cebc1] succeeded in 0.5220787239959463s: 'No new documents were added.'",
+        "timestamp": "1789359601526269835",
+        "date": "2026-09-14T04:20:01.526Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 09:50:01,001] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[a9aa1dc7-9a35-4dd5-a623-1f2bbc4cebc1] received",
+        "timestamp": "1789359601002231605",
+        "date": "2026-09-14T04:20:01.002Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 09:50:00,999] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)",
+        "timestamp": "1789359600999530277",
+        "date": "2026-09-14T04:20:00.999Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 09:40:00,488] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[5c462b72-0d7d-4cb9-b58b-ffd1a9bce8e4] succeeded in 0.382699694018811s: 'No new documents were added.'",
+        "timestamp": "1789359000489250458",
+        "date": "2026-09-14T04:10:00.489Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 09:40:00,104] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[5c462b72-0d7d-4cb9-b58b-ffd1a9bce8e4] received",
+        "timestamp": "1789359000104647154",
+        "date": "2026-09-14T04:10:00.104Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 09:40:00,101] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)",
+        "timestamp": "1789359000101477856",
+        "date": "2026-09-14T04:10:00.101Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 09:30:00,468] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[7a57d826-0fb8-4ade-b0a2-51f9d8424996] succeeded in 0.40420833393000066s: 'No new documents were added.'",
+        "timestamp": "1789358400468958869",
+        "date": "2026-09-14T04:00:00.468Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 09:30:00,062] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[7a57d826-0fb8-4ade-b0a2-51f9d8424996] received",
+        "timestamp": "1789358400062719621",
+        "date": "2026-09-14T04:00:00.062Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 09:30:00,059] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)",
+        "timestamp": "1789358400059615848",
+        "date": "2026-09-14T04:00:00.059Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 09:20:00,780] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[23eeeed5-1aba-4209-b22e-64e231c4dd5c] succeeded in 0.4585943730780855s: 'No new documents were added.'",
+        "timestamp": "1789357800781321853",
+        "date": "2026-09-14T03:50:00.781Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 09:20:00,320] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[23eeeed5-1aba-4209-b22e-64e231c4dd5c] received",
+        "timestamp": "1789357800320894572",
+        "date": "2026-09-14T03:50:00.320Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 09:20:00,316] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)",
+        "timestamp": "1789357800317314314",
+        "date": "2026-09-14T03:50:00.317Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 09:10:00,497] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[3227a261-c345-4ef7-8878-f1aaafad9b03] succeeded in 0.42622469004709274s: 'No new documents were added.'",
+        "timestamp": "1789357200498429746",
+        "date": "2026-09-14T03:40:00.498Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 09:10:00,069] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[3227a261-c345-4ef7-8878-f1aaafad9b03] received",
+        "timestamp": "1789357200070353991",
+        "date": "2026-09-14T03:40:00.070Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 09:10:00,066] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)",
+        "timestamp": "1789357200067280120",
+        "date": "2026-09-14T03:40:00.067Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 09:05:03,770] [INFO] [celery.app.trace] Task documents.tasks.train_classifier[0cd20631-c42d-4883-b72e-3a77f397f5bd] succeeded in 3.17944802204147s: None",
+        "timestamp": "1789356903771363281",
+        "date": "2026-09-14T03:35:03.771Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 09:05:03,521] [INFO] [paperless.classifier] No updates since last training",
+        "timestamp": "1789356903521523343",
+        "date": "2026-09-14T03:35:03.521Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 09:05:01,735] [INFO] [celery.app.trace] Task documents.tasks.check_scheduled_workflows[f02e58d9-a2a9-4dab-b54f-2957368bd28c] succeeded in 1.1450692740036175s: None",
+        "timestamp": "1789356901736390295",
+        "date": "2026-09-14T03:35:01.736Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 09:05:00,589] [INFO] [celery.worker.strategy] Task documents.tasks.train_classifier[0cd20631-c42d-4883-b72e-3a77f397f5bd] received",
+        "timestamp": "1789356900590205963",
+        "date": "2026-09-14T03:35:00.590Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 09:05:00,587] [INFO] [celery.worker.strategy] Task documents.tasks.check_scheduled_workflows[f02e58d9-a2a9-4dab-b54f-2957368bd28c] received",
+        "timestamp": "1789356900588316024",
+        "date": "2026-09-14T03:35:00.588Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 09:05:00,587] [INFO] [celery.beat] Scheduler: Sending due task Train the classifier (documents.tasks.train_classifier)",
+        "timestamp": "1789356900587335787",
+        "date": "2026-09-14T03:35:00.587Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 09:05:00,584] [INFO] [celery.beat] Scheduler: Sending due task Check and run scheduled workflows (documents.tasks.check_scheduled_workflows)",
+        "timestamp": "1789356900585098461",
+        "date": "2026-09-14T03:35:00.585Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 09:00:00,486] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[462718a0-797a-42a7-8d91-ea01b6e5e004] succeeded in 0.4048626250587404s: 'No new documents were added.'",
+        "timestamp": "1789356600486606808",
+        "date": "2026-09-14T03:30:00.486Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 09:00:00,079] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[462718a0-797a-42a7-8d91-ea01b6e5e004] received",
+        "timestamp": "1789356600079888453",
+        "date": "2026-09-14T03:30:00.079Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 09:00:00,076] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)",
+        "timestamp": "1789356600076871973",
+        "date": "2026-09-14T03:30:00.076Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 08:50:00,442] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[d5aebba7-884a-49f2-98d6-e8315e4514b3] succeeded in 0.3683183479588479s: 'No new documents were added.'",
+        "timestamp": "1789356000444431309",
+        "date": "2026-09-14T03:20:00.444Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 08:50:00,072] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[d5aebba7-884a-49f2-98d6-e8315e4514b3] received",
+        "timestamp": "1789356000073095815",
+        "date": "2026-09-14T03:20:00.073Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 08:50:00,069] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)",
+        "timestamp": "1789356000070098584",
+        "date": "2026-09-14T03:20:00.070Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 08:40:00,513] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[b6be895a-056b-4901-8205-b6af2b0be738] succeeded in 0.4594221489969641s: 'No new documents were added.'",
+        "timestamp": "1789355400513606775",
+        "date": "2026-09-14T03:10:00.513Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 08:40:00,051] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[b6be895a-056b-4901-8205-b6af2b0be738] received",
+        "timestamp": "1789355400062976332",
+        "date": "2026-09-14T03:10:00.062Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 08:40:00,048] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)",
+        "timestamp": "1789355400049966270",
+        "date": "2026-09-14T03:10:00.049Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 08:30:00,793] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[054b09a7-7a6a-4ba0-99f4-9b25d283b04d] succeeded in 0.49802307097706944s: 'No new documents were added.'",
+        "timestamp": "1789354800793926599",
+        "date": "2026-09-14T03:00:00.793Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 08:30:00,293] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[054b09a7-7a6a-4ba0-99f4-9b25d283b04d] received",
+        "timestamp": "1789354800294093165",
+        "date": "2026-09-14T03:00:00.294Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 08:30:00,291] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)",
+        "timestamp": "1789354800291453595",
+        "date": "2026-09-14T03:00:00.291Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 08:20:00,795] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[d11c05dc-0f4a-477f-a436-85386d2a8073] succeeded in 0.46933044597972184s: 'No new documents were added.'",
+        "timestamp": "1789354200797302093",
+        "date": "2026-09-14T02:50:00.797Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 08:20:00,324] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[d11c05dc-0f4a-477f-a436-85386d2a8073] received",
+        "timestamp": "1789354200325019672",
+        "date": "2026-09-14T02:50:00.325Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 08:20:00,321] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)",
+        "timestamp": "1789354200322203290",
+        "date": "2026-09-14T02:50:00.322Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 08:10:01,962] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[d8570ced-d581-4abc-af40-138633b77cdf] succeeded in 0.7496823540423065s: 'No new documents were added.'",
+        "timestamp": "1789353601963069226",
+        "date": "2026-09-14T02:40:01.963Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 08:10:01,205] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[d8570ced-d581-4abc-af40-138633b77cdf] received",
+        "timestamp": "1789353601207025869",
+        "date": "2026-09-14T02:40:01.207Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    },
+    {
+        "line": "[2026-09-14 08:10:01,197] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)",
+        "timestamp": "1789353601198012585",
+        "date": "2026-09-14T02:40:01.198Z",
+        "fields": {
+            "container_id": "cc92101adda431cac864aafe74bac9b67c34b97bdba9475fe89ee8a0a4a95e55",
+            "container_name": "paperless",
+            "detected_level": "info",
+            "host": "main_server",
+            "job": "docker_logs",
+            "service_name": "paperless"
+        }
+    }
+]
